@@ -1,4 +1,4 @@
 # DesarrolloSW__Proyecto
 
 
-Farmacia
+Gestión de Abastecimiento Farmacia
