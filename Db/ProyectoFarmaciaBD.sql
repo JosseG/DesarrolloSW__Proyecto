@@ -13,8 +13,6 @@ create table if not exists tb_tipoproducto
 );
 
 
-
-
 create table if not exists tb_farmacia
 (
 	id_farmacia char(10) primary key,
@@ -64,7 +62,7 @@ create table if not exists tb_stock
     id_stock int auto_increment primary key,
     id_producto char(10) not null,
     cantidad_stock int not null,   
-    preciounitario_stock varchar(120) not null,
+    preciounitario_stock float not null,
     estado boolean not null,
     foreign key (id_producto) references tb_producto (id_producto)
 );
