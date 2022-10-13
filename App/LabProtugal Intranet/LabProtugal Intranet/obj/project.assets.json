@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabProtugal Intranet\\LabProtugal Intranet\\LabProtugal Intranet.csproj",
-      "projectName": "LabProtugal Intranet",
-      "projectPath": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabProtugal Intranet\\LabProtugal Intranet\\LabProtugal Intranet.csproj",
+      "projectUniqueName": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabProtugal Intranet\\LabProtugal Intranet\\LabPortugal Intranet.csproj",
+      "projectName": "LabPortugal Intranet",
+      "projectPath": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabProtugal Intranet\\LabProtugal Intranet\\LabPortugal Intranet.csproj",
       "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabProtugal Intranet\\LabProtugal Intranet\\obj\\",
       "projectStyle": "PackageReference",
