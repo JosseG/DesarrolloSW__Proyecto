@@ -2,13 +2,13 @@
 {
     public class Producto
     {
-        private string id { get; set; }
-        private string idLaboratorio { get; set; }
-        private int idTipoProducto { get; set; }
-        private string codigoBarra { get; set; }
-        private string descripcion { get; set; }
-        private string marca { get; set; }
-        private bool estado { get; set; }
+        public string id { get; set; }
+        public string idLaboratorio { get; set; }
+        public int idTipoProducto { get; set; }
+        public string codigoBarra { get; set; }
+        public string descripcion { get; set; }
+        public string marca { get; set; }
+        public bool estado { get; set; }
 
 
     }

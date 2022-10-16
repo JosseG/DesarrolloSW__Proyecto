@@ -15,6 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Jose\Desktop\CIBERTEC_5TO\Desarrollo de Servicios WEB\Proyecto\DesarrolloSW__Proyecto\App\LabPortugal Intranet\LabPortugal Intranet
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/FarmaciaController1/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFDb250cm9sbGVyMVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

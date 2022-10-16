@@ -3,12 +3,12 @@
     public class Farmacia
     {
 
-        private string id { get; set; }
-        private string ruc { get; set; }
-        private string razonSocial { get; set; }
-        private string telefono { get; set; }
-        private string direccion { get; set; }
-        private bool estado { get; set; }
+        public string id { get; set; }
+        public string ruc { get; set; }
+        public string razonSocial { get; set; }
+        public string telefono { get; set; }
+        public string direccion { get; set; }
+        public bool estado { get; set; }
 
     }
 }
