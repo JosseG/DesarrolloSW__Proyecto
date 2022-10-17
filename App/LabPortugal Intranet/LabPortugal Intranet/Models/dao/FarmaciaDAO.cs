@@ -1,6 +1,7 @@
 ﻿using LabPortugal_Intranet.Commons;
 using LabPortugal_Intranet.Commons.Imp;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace LabPortugal_Intranet.Models.dao
 {
@@ -8,7 +9,30 @@ namespace LabPortugal_Intranet.Models.dao
     {
         public void Actualizar(Farmacia o)
         {
-            throw new NotImplementedException();
+            SqlConnection connection = new Conexion().getConnection();
+            using (connection)
+            {
+                connection.Open();
+
+                try
+                {
+
+                    SqlCommand command = new SqlCommand("exec usp_farmacia_actualizar @id,@ruc,@razonsocial,@telefono,@direccion", connection);
+
+                    command.Parameters.AddWithValue("@id", o.id);
+                    command.Parameters.AddWithValue("@ruc", o.ruc);
+                    command.Parameters.AddWithValue("@razonsocial", o.razonSocial);
+                    command.Parameters.AddWithValue("@telefono", o.telefono);
+                    command.Parameters.AddWithValue("@direccion", o.direccion);
+
+                    command.ExecuteNonQuery();
+
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.ToString());
+                }
+            }
         }
 
         public void Agregar(Farmacia o)
@@ -18,7 +42,25 @@ namespace LabPortugal_Intranet.Models.dao
 
         public void Eliminar(object o)
         {
-            throw new NotImplementedException();
+            SqlConnection connection = new Conexion().getConnection();
+            using (connection)
+            {
+                connection.Open();
+
+                try
+                {
+
+                    SqlCommand command = new SqlCommand("exec usp_farmacia_eliminar @id", connection);
+
+                    command.Parameters.AddWithValue("@id", o);
+                    command.ExecuteNonQuery();
+
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.ToString());
+                }
+            }
         }
 
         public List<Farmacia> ObtenerTodos()
@@ -62,9 +104,16 @@ namespace LabPortugal_Intranet.Models.dao
             }
         }
 
+        
         public Farmacia ObtenerXId(object o)
         {
-            throw new NotImplementedException();
+            Debug.WriteLine(o);
+            if (o != null)
+            {
+                return ObtenerTodos().FirstOrDefault(f => f.id.Equals(o));
+            }
+            return new Farmacia();
+            
         }
     }
 }
