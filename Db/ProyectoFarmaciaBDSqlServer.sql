@@ -33,6 +33,17 @@ begin
 end
 go
 
+create or alter procedure usp_farmacia_agregar
+@id char(10),
+@ruc char(14),
+@razonsocial varchar(90),
+@telefono varchar(15),
+@direccion varchar(90)
+as
+begin
+	insert into tb_farmacia values (@id,@ruc,@razonsocial,@telefono,@direccion,1)
+end
+go
 
 
 

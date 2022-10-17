@@ -16,6 +16,19 @@ namespace LabPortugal_Intranet.Controllers
         }
 
 
+        public ActionResult Agregar()
+        {
+            return View(new Farmacia());
+        }
+
+        [HttpPost]
+        public ActionResult Agregar(Farmacia farmacia)
+        {
+            farmaciadao.Agregar(farmacia);
+            return View(farmacia);
+        }
+
+
         public ActionResult Detalles(string id)
         {
             if (id == null)
