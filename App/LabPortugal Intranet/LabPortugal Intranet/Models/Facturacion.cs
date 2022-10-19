@@ -3,13 +3,12 @@
     public class Facturacion
     {
 
-        private string id { get; set; }
-        private string producto { get; set; }
-        private DateTime fechaEmision { get; set; }
+        public string id { get; set; }
 
-        private string rucFarmacia { get; set; }
-        private string razonSocial { get; set; }
-        private double subTotal { get; set; }
-        private bool estado { get; set; }
+        public string idFarmacia { get; set; }
+        public DateTime fechaEmision { get; set; }
+
+        public double subTotal { get; set; }
+        public bool estado { get; set; }
     }
 }

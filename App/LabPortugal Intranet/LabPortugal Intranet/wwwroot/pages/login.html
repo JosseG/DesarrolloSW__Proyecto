@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/site.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+    <meta name="google-signin-client_id" content="1004073073821-073lv2l75q0htd2qj8c72bhon1oetqrv.apps.googleusercontent.com">
+
+</head>
+<body class="vh-100">
+
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="container h-50">
+            <div class="row m-3 h-100">
+                <div class="col h-100 border m-1 d-flex align-items-center justify-content-center">
+                    <div class="">
+                        <img src="../images/KiaLogo.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-7 h-100 border m-1" style="background-color: #79CD98;">
+                    <div class="h-100 m-5">
+                        <div class="text-center mb-4">
+                            <h1 class="fw-bold text-white">Login</h1>
+                        </div>
+                        <form>
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                              <div class="input-group">
+                                <span class="input-group-text">
+                                    <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                </span>
+                                <input type="email" id="form2Example1" class="form-control" placeholder="Ingresar Usuario"/>
+
+                              </div>
+                            </div>
+                          
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+                                            <i class="fa fa-password"></i>
+                                        </button>
+                                    </span>
+                                  <input type="password" id="form2Example2" class="form-control" placeholder="Ingresar Contraseña" />
+                                </div>
+                            </div>
+                          
+                            <!-- 2 column grid layout for inline styling -->
+
+                          
+                            <!-- Submit button -->
+                            <button type="button" class="btn btn-success btn-block mb-4 w-100 rounded-9">Iniciar Sesión</button>
+                          
+                            <!-- Register buttons -->
+                            <div class="d-flex justify-content-center">
+                              <div class="g-signin2" data-onsuccess="onSignIn">
+                                <button type="button" class="btn btn-link btn-floating mx-1 ">
+                                    <i class="fab fa-google"></i>
+                                  </button>
+                              </div>
+                            </div>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<img src="../images/KiaLogo.png" alt="">-->
+
+
+
+
+
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js" integrity="sha384-sCI3dTBIJuqT6AwL++zH7qL8ZdKaHpxU43dDt9SyOzimtQ9eyRhkG3B7KMl6AO19" crossorigin="anonymous"></script>
+    <script>
+        function onSignIn(googleUser) {
+          var profile = googleUser.getBasicProfile();
+          console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+          console.log('Name: ' + profile.getName());
+          console.log('Image URL: ' + profile.getImageUrl());
+          console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+
+    </script>
+
+</body>
+</html>

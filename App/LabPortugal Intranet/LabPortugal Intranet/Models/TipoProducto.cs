@@ -3,9 +3,9 @@
     public class TipoProducto
     {
 
-        private int id { get; set; }
-        private string nombre { get; set; }
-        private bool estado { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public bool estado { get; set; }
 
     }
 }

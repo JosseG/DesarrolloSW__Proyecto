@@ -1,13 +1,36 @@
 using LabPortugal_Intranet.Commons;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+var configuration = builder.Configuration;
+var clientId = configuration.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build().GetValue<String>("Authentication:Google:ClientId");
+var clientSecret = configuration.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build().GetValue<String>("Authentication:Google:ClientSecret");
+
+Debug.WriteLine(clientId + " -->  " + clientSecret);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+services.AddControllersWithViews();
+/*services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(e =>
+    {
+        e.LoginPath = "";
+        e.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+        e.AccessDeniedPath = "";
+    }
+    );*/
+
+services.AddAuthentication()
+    .AddGoogle(go =>
+    {
+        /*go.ClientId = configuration["Authentication:Google:ClientId"];
+        go.ClientSecret = configuration["Authentication:Google:ClientSecret"];*/
+        go.ClientId = clientId;
+        go.ClientSecret = clientSecret;
+    });
 
 
-/*builder.Services.AddDbContext(opt =>
-    opt.UseSqlServer(conn));*/
 
 var app = builder.Build();
 
@@ -21,7 +44,6 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 
 app.UseRouting();
 

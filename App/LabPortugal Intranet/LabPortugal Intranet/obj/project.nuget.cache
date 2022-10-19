@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xfOTHBoXGtJDb7d2Ly97RtwxG4NO05eo91kZxX/So4Bra79HnQEEbvsAjhivZ0tSmyJXTyl0SLpFdPoOTWPodg==",
+  "dgSpecHash": "qdgTVwrzrRJzeQMFubsSKQxsPOJizSyIIFwvclJ1aw6s5DW9ma3QG/1MUcyKY6OJ/44IA4CiZkWLfip6try7Tw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Jose\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\Jose\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\6.0.9\\microsoft.aspnetcore.authentication.google.6.0.9.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\Jose\\.nuget\\packages\\microsoft.build\\17.0.0\\microsoft.build.17.0.0.nupkg.sha512",

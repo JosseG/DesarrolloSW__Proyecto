@@ -27,9 +27,10 @@ namespace LabPortugal_Intranet.Models.dao
             SqlConnection connection = new Conexion().getConnection();
             using (connection)
             {
+                connection.Open();
                 try
                 {
-                    SqlCommand command = new SqlCommand("exec usp_productos_listar", connection);
+                    SqlCommand command = new SqlCommand("exec usp_producto_listar", connection);
 
                     SqlDataReader reader = command.ExecuteReader();
 

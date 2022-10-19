@@ -21,7 +21,7 @@ if OBJECT_ID('tb_farmacia','U') is null create table tb_farmacia
 	estado bit not null
 )
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_farmacias_listar
 as
@@ -29,6 +29,7 @@ begin
 	select * from tb_farmacia
 end
 go
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_farmacia_agregar
 @id char(10),
@@ -41,8 +42,7 @@ begin
 	insert into tb_farmacia values (@id,@ruc,@razonsocial,@telefono,@direccion,1)
 end
 go
-
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_farmacia_actualizar
 @id char(10),
@@ -55,6 +55,7 @@ begin
 	update tb_farmacia set ruc_farmacia = @ruc, razonsocial_farmacia = @razonsocial, telefono_farmacia = @telefono, direccion_farmacia = @direccion where id_farmacia = @id
 end
 go
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_farmacia_eliminar
 @id char(10)
@@ -65,8 +66,6 @@ end
 go
 
 
-
-
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
@@ -75,19 +74,12 @@ go
 /*--------------------------------------------------------------------------------*/
 
 
-
-
-
-
-
-
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
-
 
 if OBJECT_ID('tb_tipoproducto','U') is null create table tb_tipoproducto
 (
@@ -97,16 +89,13 @@ if OBJECT_ID('tb_tipoproducto','U') is null create table tb_tipoproducto
 )
 go
 
-
-
-
 create or alter procedure usp_tipoproducto_listar
 as
 begin
 	select * from tb_tipoproducto
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_tipoproducto_agregar
 @nombre char(14)
@@ -115,7 +104,7 @@ begin
 	insert into tb_tipoproducto (nombre_tipoprod,estado) values (@nombre,1)
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_tipoproducto_actualizar
 @id int,
@@ -125,7 +114,7 @@ begin
 	update tb_tipoproducto set nombre_tipoprod=@nombre  where id_tipoprod = @id
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_tipoproducto_eliminar
 @id int
@@ -135,8 +124,6 @@ begin
 end
 go
 
-
-
 insert into tb_tipoproducto (nombre_tipoprod,estado) values ('Analgésico',1)
 insert into tb_tipoproducto (nombre_tipoprod,estado) values ('Antiinflamatorio',1)
 insert into tb_tipoproducto (nombre_tipoprod,estado) values ('Antihístaminico',1)
@@ -144,15 +131,12 @@ insert into tb_tipoproducto (nombre_tipoprod,estado) values ('Antialérgicos',1)
 go
 
 
-
-
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
-
 
 if OBJECT_ID('tb_laboratorio','U') is null  create table tb_laboratorio
 (
@@ -162,9 +146,12 @@ if OBJECT_ID('tb_laboratorio','U') is null  create table tb_laboratorio
 	telefono_laboratorio varchar(15) not null,
 	estado bit not null
 )
+
+insert into tb_laboratorio values ('LAB0000001','R1379477414','LaboratoriosPortugal','990230999',1)
 go
 
-
+go
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_laboratorio_listar
 as
@@ -172,7 +159,7 @@ begin
 	select * from tb_laboratorio
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_laboratorio_agregar
 @id char(10),
@@ -184,7 +171,7 @@ begin
 	insert into tb_laboratorio values (@id,@ruc,@razonsocial,@telefono,1)
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_laboratorio_actualizar
 @id char(10),
@@ -196,7 +183,7 @@ begin
 	update tb_laboratorio set ruc_laboratorio = @ruc, razonsocial_laboratorio = @razonsocial, telefono_laboratorio = @telefono   where id_laboratorio = @id
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_laboratorio_eliminar
 @id char(10)
@@ -208,14 +195,16 @@ go
 
 
 
-/*--------------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------------*/
 
 
+
+
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
 
 if OBJECT_ID('tb_producto','U') is null  create table tb_producto
 (
@@ -229,8 +218,17 @@ if OBJECT_ID('tb_producto','U') is null  create table tb_producto
     foreign key(id_tipoprod) references tb_tipoproducto(id_tipoprod),
     foreign key(id_laboratorio) references tb_laboratorio(id_laboratorio)
 )
+
+insert into tb_producto values ('AAA0000001','LAB0000001',1,'5901334123457','paracetamol','panadol',1)
+go
+insert into tb_producto values ('AAA0000002','LAB0000001',1,'5901334123666','aspirina','vic',1)
+go
+insert into tb_producto values ('AAA0000003','LAB0000001',2,'5909934123666','el naproxeno','vic',1)
+go
+insert into tb_producto values ('AAA0000004','LAB0000001',2,'5909934123677','el ibuprofén','vic',1)
 go
 
+/*--------------------------------------------------------------------------------*/
  
 create or alter procedure usp_producto_listar
 as
@@ -238,7 +236,7 @@ begin
 	select * from tb_producto
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_producto_agregar
 @id char(10),
@@ -252,7 +250,7 @@ begin
 	insert into tb_producto values (@id,@idlaboratorio,@idtipo,@codigobarras,@descripcion,@marca,1)
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_producto_actualizar
 @id char(10),
@@ -266,7 +264,7 @@ begin
 	update tb_producto set id_laboratorio = id_laboratorio, id_tipoprod = @idtipo, codigobar_producto = @codigobarras, descripcion_producto = @descripcion, marca_producto = @marca   where id_producto = @id
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_producto_eliminar
 @id char(10)
@@ -277,14 +275,12 @@ end
 go
 
 
-
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
-
 
 if OBJECT_ID('tb_facturacion','U') is null create table tb_facturacion
 (
@@ -296,16 +292,15 @@ if OBJECT_ID('tb_facturacion','U') is null create table tb_facturacion
 	foreign key(id_farmacia) references tb_farmacia(id_farmacia)
 )
 go
+/*--------------------------------------------------------------------------------*/
 
-
- 
 create or alter procedure usp_facturacion_listar
 as
 begin
 	select * from tb_facturacion
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_facturacion_agregar
 @id char(10),
@@ -317,7 +312,7 @@ begin
 	insert into tb_facturacion values (@id,@idfarmacia,@fechaemision,@subtotal,1)
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_facturacion_actualizar
 @id char(10),
@@ -330,7 +325,7 @@ begin
 end
 go
 
-
+/*--------------------------------------------------------------------------------*/
 create or alter procedure usp_facturacion_eliminar
 @id char(10)
 as
@@ -348,8 +343,6 @@ go
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 
-
-
 if OBJECT_ID('tb_detalle_facturacion','U') is null create table tb_detalle_facturacion
 (
 	id_facturacion char(10) not null,
@@ -362,7 +355,7 @@ if OBJECT_ID('tb_detalle_facturacion','U') is null create table tb_detalle_factu
 	foreign key(id_facturacion) references tb_facturacion(id_facturacion)
 )
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_detalle_facturacion_listar
 as
@@ -370,7 +363,7 @@ begin
 	select * from tb_detalle_facturacion
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_facturacion_farmacia_producto_listar
 as
@@ -378,8 +371,7 @@ begin
 	select p.descripcion_producto,f.fechaemision_facturacion,fr.ruc_farmacia,fr.razonsocial_farmacia,f.subtotal_facturacion from tb_detalle_facturacion df inner join tb_facturacion f on df.id_facturacion = f.id_facturacion join tb_producto p on df.id_producto = p.id_producto join tb_farmacia fr on f.id_farmacia = fr.id_farmacia
 end
 go
-
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_detalle_facturacion_agregar
 @idfacturacion char(10),
@@ -391,8 +383,7 @@ begin
 	insert into tb_detalle_facturacion values (@idfacturacion,@idproducto,@cantidadproducto,@monto,1)
 end
 go
-
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_detalle_facturacion_actualizar
 @idfacturacion char(10),
@@ -404,7 +395,7 @@ begin
 	update tb_detalle_facturacion set cantidadproducto_detalle_facturacion = @cantidadproducto, monto_detalle_facturacion = @monto where id_facturacion = @idfacturacion and id_producto = @idproducto
 end
 go
-
+/*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_detalle_facturacion_eliminar
 @idfacturacion char(10),
@@ -415,9 +406,6 @@ begin
 end
 go
 
-
-
-
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
@@ -426,26 +414,10 @@ go
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 insert into tb_farmacia values ('FR00000001','R1379477412133','Farmacias TuSalud','990230423','Las palmeras - Pachacamac',1)
 go
-
 insert into tb_farmacia values ('FR00000002','R1379477412111','Farmacias NN','993330423','Los alamos - Lurin',0)
 go
-
 insert into tb_farmacia values ('FR00000003','R1379477412000','Farmacias Rimac','991111423','Gardenias - Surco',1)
 go
