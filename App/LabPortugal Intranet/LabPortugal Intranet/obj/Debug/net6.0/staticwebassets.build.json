@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sfgAaVYhtO4cOllfi5OtgQfIUIBB3qb11TveXCIPDTg=",
+  "Hash": "rlYsW5DgjVES64eLPCMyoWMvr4zp7/UDyYSE0s/BZ1A=",
   "Source": "LabPortugal Intranet",
   "BasePath": "_content/LabPortugal Intranet",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\wwwroot\\customcss\\style.css",
+      "SourceId": "LabPortugal Intranet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\wwwroot\\",
+      "BasePath": "_content/LabPortugal Intranet",
+      "RelativePath": "customcss/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\customcss\\style.css"
     },
     {
       "Identity": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\wwwroot\\favicon.ico",

@@ -1,0 +1,72 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    
+*@
+@model UsuarioFarmacia
+@{
+    ViewData["Title"] = "Login Page";
+    Layout = "~/Views/Shared/_Empty.cshtml";
+}
+
+
+    <div class="d-flex align-items-center justify-content-center main-container">
+        <div class="container">
+            <div class="row h-100">
+                <div class="col h-100  d-flex align-items-center justify-content-center">
+                    <div class="">
+                        <img src="../images/KiaLogo.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-7 h-100 column-right-c" >
+                    <div class="h-100">
+                        <div class="text-center mb-4">
+                            <h1 class="fw-bold text-white">LOGIN</h1>
+                        </div>
+                        <form asp-controller="Auth" asp-action="LogIn" method="post">
+                            <!-- Email input -->
+                            <div class="form-outline mb-4 email-input form-field">
+                              <div class="input-group overflow-hidden ">
+                                <span class="input-group-text">
+                                    <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                </span>
+                                <input type="text" id="alias" asp-for="alias" class="form-control" placeholder="Ingresar Usuario"/>
+
+                              </div>
+                            </div>
+                          
+                            <!-- Password input -->
+                            <div class="form-outline mb-4  password-input form-field">
+                                <div class="input-group overflow-hidden">
+                                    <span class="input-group-text">
+                                        <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+                                            <i class="fa fa-password"></i>
+                                        </button>
+                                    </span>
+                                  <input type="text" id="contrasena" asp-for="contrasena" class="form-control" placeholder="Ingresar Contraseña" />
+                                </div>
+                            </div>
+                          
+                            <!-- 2 column grid layout for inline styling -->
+
+                          
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-block mb-4 w-100 btn-iniciar-sesion fw-bold text-white">Iniciar Sesión</button>
+                          
+                            <!-- Register buttons -->
+                            
+                          </form>
+                          <div class="d-flex justify-content-center">
+                              <div>
+                                <a asp-area="" asp-controller="Auth" asp-action="LogInWithGoogle" type="button" class="btn btn-link btn-floating mx-1 ">
+                                    <i class="fab fa-google"></i>
+                                  </a>
+                              </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<img src="../images/KiaLogo.png" alt="">-->

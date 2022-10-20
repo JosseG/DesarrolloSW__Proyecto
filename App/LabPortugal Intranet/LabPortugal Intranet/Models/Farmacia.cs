@@ -4,7 +4,6 @@ namespace LabPortugal_Intranet.Models
 {
     public class Farmacia
     {
-
         [Display(Name = "Id")] public string id { get; set; }
         [Display(Name = "Ruc")] public string ruc { get; set; }
         [Display(Name = "Razón Social")] public string razonSocial { get; set; }

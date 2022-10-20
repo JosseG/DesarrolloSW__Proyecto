@@ -56,10 +56,6 @@ namespace LabPortugal_Intranet.Models.dao
                 }
                 return list;
 
-                /*using(SqlCommand command = new SqlCommand("exec usp_productos_listar", connection))
-                {
-
-                }*/
             }
         }
 

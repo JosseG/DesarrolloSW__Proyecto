@@ -3,12 +3,11 @@
     public class UsuarioFarmacia
     {
 
-        private int id { get; set; }
-        private string idFarmacia { get; set; }
-        private string alias { get; set; }
-        private string contrasena { get; set; }
-        private bool estado { get; set; }
-
+        public int id { get; set; }
+        public string idFarmacia { get; set; }
+        public string alias { get; set; }
+        public string contrasena { get; set; }
+        public bool estado { get; set; }
 
     }
 }

@@ -1,0 +1,45 @@
+
+.header-container {
+    height: 6%;
+}
+
+.main-container{
+    height: 88%;
+}
+.main-container > div {
+    height: 60%;
+}
+
+.main-container > div > div {
+    border: 1px solid #d9d9d9;
+    box-shadow: 0 10px 10px #808080;
+}
+
+.footer-container {
+    height: 6%;
+}
+
+.column-right-c {
+    background-color: #79CD98; /*A6DCC2*/
+}
+
+.column-right-c > div {
+    padding:4rem;
+}
+
+.form-field > div {
+    border: 1px solid black;
+    border-radius: 0.8rem;
+}
+
+.btn-iniciar-sesion {
+    background-color: #4EAA94;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    height: 45px;
+}
+
+.btn-iniciar-sesion:hover {
+    background-color: #2f8e77;
+   
+}

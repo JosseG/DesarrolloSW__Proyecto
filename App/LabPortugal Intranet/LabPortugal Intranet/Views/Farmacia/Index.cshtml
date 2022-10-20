@@ -5,6 +5,23 @@
 
 <h2 class="text-center">::: MENU PRINCIPAL :::</h2>
 <br />
+
+<div>
+@if (Context.User.Identity.IsAuthenticated)
+    {
+        <div>
+            <p>
+                Hola @User.Identity.Name
+                
+            </p>
+            <img >
+        </div>
+        <div>
+            <a asp-area="" asp-controller="Auth" asp-action="LogOut">LogOut</a>
+        </div>
+    }
+</div>
+
 <table style="font-size:large">
     <tr>
         <td>@Html.ActionLink("Mantenimiento Farmacia", "MantenimientoFarmacia")</td>

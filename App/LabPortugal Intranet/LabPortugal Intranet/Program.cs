@@ -1,5 +1,7 @@
 using LabPortugal_Intranet.Commons;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,22 +12,27 @@ var configuration = builder.Configuration;
 
 // Add services to the container.
 services.AddControllersWithViews();
-/*services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(e =>
-    {
-        e.LoginPath = "";
-        e.ExpireTimeSpan = TimeSpan.FromMinutes(5);
-        e.AccessDeniedPath = "";
-    }
-    );*/
+//services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+//    .AddCookie(e =>
+//    {
+//        e.LoginPath = "";
+//        e.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+//        e.AccessDeniedPath = "";
+//    }
+//    );
 
-services.AddAuthentication()
-    .AddGoogle(go =>
+
+services.AddAuthentication( o =>
+    {
+        o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        o.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+    })
+    .AddCookie()
+    .AddGoogle(GoogleDefaults.AuthenticationScheme,go =>
     {
         go.ClientId = configuration["Authentication:Google:ClientId"];
         go.ClientSecret = configuration["Authentication:Google:ClientSecret"];
-
-        Debug.WriteLine(go.ClientId + " -->  " + go.ClientSecret);
+        go.ClaimActions.MapJsonKey("urn:google:picture","picture","url");
     });
 
 
@@ -44,11 +51,12 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Farmacia}/{action=Index}/{id?}");
+    pattern: "{controller=Auth}/{action=Index}/{id?}");
 
 app.Run();

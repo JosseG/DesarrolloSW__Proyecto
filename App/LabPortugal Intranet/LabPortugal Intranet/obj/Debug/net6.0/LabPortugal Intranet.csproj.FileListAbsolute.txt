@@ -739,5 +739,6 @@ D:\Proy\LabPortugal Intranet\LabPortugal Intranet\obj\Debug\net6.0\refint\LabPor
 D:\Proy\LabPortugal Intranet\LabPortugal Intranet\obj\Debug\net6.0\LabPortugal Intranet.pdb
 D:\Proy\LabPortugal Intranet\LabPortugal Intranet\obj\Debug\net6.0\LabPortugal Intranet.genruntimeconfig.cache
 D:\Proy\LabPortugal Intranet\LabPortugal Intranet\obj\Debug\net6.0\ref\LabPortugal Intranet.dll
-C:\Users\Jose\Desktop\CIBERTEC_5TO\Desarrollo de Servicios WEB\Proyecto\DesarrolloSW__Proyecto\App\LabPortugal Intranet\LabPortugal Intranet\obj\Debug\net6.0\scopedcss\Views\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Jose\Desktop\CIBERTEC_5TO\Desarrollo de Servicios WEB\Proyecto\DesarrolloSW__Proyecto\App\LabPortugal Intranet\LabPortugal Intranet\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\Jose\Desktop\CIBERTEC_5TO\Desarrollo de Servicios WEB\Proyecto\DesarrolloSW__Proyecto\App\LabPortugal Intranet\LabPortugal Intranet\obj\Debug\net6.0\scopedcss\Views\Shared\_Empty.cshtml.rz.scp.css
+C:\Users\Jose\Desktop\CIBERTEC_5TO\Desarrollo de Servicios WEB\Proyecto\DesarrolloSW__Proyecto\App\LabPortugal Intranet\LabPortugal Intranet\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout - Copia.cshtml.rz.scp.css
