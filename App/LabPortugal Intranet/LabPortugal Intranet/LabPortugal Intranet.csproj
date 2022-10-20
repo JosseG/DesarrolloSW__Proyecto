@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>LabPortugal_Intranet</RootNamespace>
+    <UserSecretsId>dba14ac0-27dd-4099-83d8-6b1c85b4e1a6</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
