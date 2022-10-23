@@ -1,0 +1,89 @@
+﻿
+@model Farmacia
+@{
+    ViewData["Title"] = "SignUpPharmacy";
+    Layout = "~/Views/Shared/_Empty.cshtml";
+}
+
+<div class="d-flex align-items-center justify-content-center main-container">
+        <div class="container">
+            <div class="row h-100">
+                <div class="col m-auto">
+                    <div class="">
+                        <img src="../images/KiaLogo.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-7 h-100 column-right-c-register" >
+                    <div class="h-100">
+                        <div class="text-center mb-4">
+                            <h1 class="fw-bold text-white">Registro de Farmacia</h1>
+                        </div>
+                        <form asp-controller="Auth" asp-action="SignUpPharmacy" method="post">
+                            <!-- Email input -->
+                            <div class="form-outline mb-4 email-input form-field">
+                              <div class="input-group overflow-hidden ">
+                                <span class="input-group-text">
+                                    <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                </span>
+                                <input type="text" id="alias" asp-for="razonSocial" class="form-control" placeholder="Ingresar la razon social"/>
+
+                              </div>
+                            </div>
+                          
+                            
+                            <div class="form-outline mb-4  password-input form-field">
+                                <div class="input-group overflow-hidden">
+                                    <span class="input-group-text">
+                                        <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+                                            <i class="fa fa-password"></i>
+                                        </button>
+                                    </span>
+                                  <input type="text" id="contrasena" asp-for="direccion" class="form-control" placeholder="Ingresar la dirección" />
+                                </div>
+                            </div>
+
+                            <div class="form-outline mb-4 email-input form-field">
+                              <div class="input-group overflow-hidden ">
+                                <span class="input-group-text">
+                                    <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                </span>
+                                <input type="text" id="alias" asp-for="telefono" class="form-control" placeholder="Ingresar teléfono"/>
+                              </div>
+                            </div>
+                          
+                            <div class="form-outline mb-4  password-input form-field">
+                                <div class="input-group overflow-hidden">
+                                    <span class="input-group-text">
+                                        <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+                                            <i class="fa fa-password"></i>
+                                        </button>
+                                    </span>
+                                  <input type="text" id="contrasena" class="form-control" placeholder="Ingresar Contraseña" />
+                                </div>
+                            </div>
+                          
+                            <!-- 2 column grid layout for inline styling -->
+
+                          
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-block mb-4 w-100 btn-auth btn-auth_registrar fw-bold text-white">Siguiente</button>
+                          
+                            <!-- Register buttons -->
+                            
+                          </form>
+                          <div class="d-flex justify-content-center">
+                              <div>
+                                <a asp-area="" asp-controller="Auth" asp-action="SignUpWithGoogle" type="button" class="btn btn-link btn-floating mx-1 ">
+                                    <i class="fab fa-google"></i>
+                                  </a>
+                              </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

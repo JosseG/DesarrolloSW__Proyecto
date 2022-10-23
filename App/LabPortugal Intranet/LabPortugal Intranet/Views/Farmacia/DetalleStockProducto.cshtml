@@ -1,0 +1,67 @@
+﻿@model LabPortugal_Intranet.Models.Producto
+
+@{
+    ViewData["Title"] = "DetalleStockProducto";
+}
+
+<h3>Detalle Producto</h3>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.idLaboratorio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.idLaboratorio)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoProducto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoProducto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.codigoBarra)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.codigoBarra)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.marca)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.marca)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.stock)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.stock)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.precioUnidad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.precioUnidad)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="MantenimientoStockProducto">Back to List</a>
+</div>
+
+

@@ -1,0 +1,80 @@
+﻿@model LabPortugal_Intranet.Models.OrdenCompra
+
+@{
+    ViewData["Title"] = "EliminarOrdenCompra";
+}
+
+<h1>Eliminar Orden Compra</h1>
+
+<div>
+    <hr />
+    <form asp-action="EliminarOrdenCompra">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.idLaboratorio)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.idLaboratorio)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.idProducto)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.idProducto)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.numero)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.numero)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.fechaPedido)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.fechaPedido)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.fechaEntrega)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.fechaEntrega)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.condicionesPago)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.condicionesPago)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.valor)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.valor)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.estado)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.estado)
+            </dd>
+        </dl>
+        <div class="form-group">
+            <input type="submit" value="Eliminar." class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+<div>
+    <a asp-action="MantenimientoOrdenCompra">Back to List</a>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

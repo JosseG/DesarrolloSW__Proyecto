@@ -36,16 +36,19 @@ namespace LabPortugal_Intranet.Models.dao
 
                     while (reader.Read())
                     {
-                        
                         list.Add(new Producto()
                         {
                             id = reader.GetString(0),
                             idLaboratorio = reader.GetString(1),
                             idTipoProducto = reader.GetInt32(2),
-                            codigoBarra = reader.GetString(3),
-                            descripcion = reader.GetString(4),
-                            marca = reader.GetString(5),
-                            estado = reader.GetBoolean(6)
+                            TipoProducto = reader.GetString(3),
+                            codigoBarra = reader.GetString(4),
+                            descripcion = reader.GetString(5),
+                            marca = reader.GetString(6),
+                            stock = reader.GetInt32(7),
+                            precioUnidad = reader.GetDouble(8),
+                            estado = reader.GetBoolean(9)
+
                         });
                     }
                     reader.Close();
@@ -55,7 +58,6 @@ namespace LabPortugal_Intranet.Models.dao
                     Console.WriteLine(e.Message);
                 }
                 return list;
-
             }
         }
 

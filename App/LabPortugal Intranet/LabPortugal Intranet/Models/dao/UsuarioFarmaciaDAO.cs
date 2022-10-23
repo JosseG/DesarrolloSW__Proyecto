@@ -82,7 +82,7 @@ namespace LabPortugal_Intranet.Models.dao
                     command.Parameters.AddWithValue("@contrasena", b);
                     SqlDataReader reader = command.ExecuteReader();
 
-                    if (reader.NextResult())
+                    if (reader.Read())
                     {
                         Debug.WriteLine("Si llego");
                         result = true;

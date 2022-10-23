@@ -3,14 +3,15 @@
     public class OrdenCompra
     {
 
-        private int id { get; set; }
-        private string idLaboratorio { get; set; }
-        private string numero { get; set; }
-        private DateTime fechaPedido { get; set; }
-        private DateTime fechaEntrega { get; set; }
-        private string condicionesPago { get; set; }
-        private string transporte { get; set; }
-        private double valor { get; set; }
+        public int id { get; set; }
+        public string idLaboratorio { get; set; }
+        public string idProducto { get; set; }
+        public string numero { get; set; }
+        public DateTime fechaPedido { get; set; }
+        public DateTime fechaEntrega { get; set; }
+        public string condicionesPago { get; set; }
+        public double valor { get; set; }
+        public bool estado { get; set; }
 
     }
 }

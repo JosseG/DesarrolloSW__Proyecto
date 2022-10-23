@@ -1,0 +1,79 @@
+﻿@model IEnumerable<LabPortugal_Intranet.Models.Producto>
+
+
+@{
+    ViewData["Title"] = "VentaProducto";
+}
+<h2 class="text-center">:::: VENTA DE FARMACOS::::</h2>
+<br />
+
+<p>
+    @using (Html.BeginForm())
+    {
+        <strong>Ingrese  Nombre de Producto</strong>
+        <input type="text" name="nombre" value="@ViewBag.nombre" />
+        <br />
+        <br />
+        <strong>Seleccione Tipo de Producto.</strong>
+        @Html.DropDownList("id", (SelectList)ViewBag.TipoProducto)
+        <br />
+        <br />
+        <input type="submit" value="BUSCAR" class="btn btn-success" />
+        <br />
+    }
+</p>
+
+
+<p>
+    @Html.ActionLink("Retornar al Modulo Principal", "Index")
+</p>
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codigoBarra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precioUnidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+           <td>
+                    @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.codigoBarra)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.marca)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.precioUnidad)
+            </td>
+                 <td>
+                    @Html.ActionLink("Detalle", "DetalleVentaProducto", new {  id=item.id  })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

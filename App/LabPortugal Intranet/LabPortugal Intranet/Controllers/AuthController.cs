@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace LabPortugal_Intranet.Controllers
 {
@@ -11,15 +12,19 @@ namespace LabPortugal_Intranet.Controllers
     {
 
         UsuarioFarmaciaDAO usuarioFarmaciaDAO = new UsuarioFarmaciaDAO();
+        FarmaciaDAO farmaciaDAO = new FarmaciaDAO();
 
         public IActionResult Index()
         {
             return View();
         }
 
+        [HttpPost]
         public IActionResult LogIn(UsuarioFarmacia usuarioFarmacia)
         {
-            if(usuarioFarmaciaDAO.validarUsuario(usuarioFarmacia.alias, usuarioFarmacia.contrasena))
+            Debug.WriteLine(usuarioFarmacia.alias);
+            Debug.WriteLine(usuarioFarmacia.contrasena);
+            if (usuarioFarmaciaDAO.validarUsuario(usuarioFarmacia.alias, usuarioFarmacia.contrasena))
             {
                 return RedirectToAction("Index", "Farmacia", new { area = "" });
             }
@@ -42,7 +47,39 @@ namespace LabPortugal_Intranet.Controllers
             return RedirectToAction("Index", "Farmacia", new { area = "" });
         }
 
-        public void SignUp()
+        public IActionResult SignUp()
+        {
+            return RedirectToAction("SignUpPharmacy");
+        }
+
+        public IActionResult SignUpPharmacy()
+        {
+            return View(new Farmacia());
+        }
+
+        [HttpPost]
+        public IActionResult SignUpPharmacy(Farmacia farmacia)
+        {
+            //farmaciaDAO.Agregar(farmacia);
+
+
+            return RedirectToAction("SignUpUserPharmacy");
+        }
+
+
+        public IActionResult SignUpUserPharmacy()
+        {
+            return View(new UsuarioFarmacia());
+        }
+
+        [HttpPost]
+        public IActionResult SignUpUserPharmacy(UsuarioFarmacia usuarioFarmacia)
+        {
+            return RedirectToAction("VerifyRuc", "Sunat");
+        }
+
+
+        public void ToSignUp()
         {
 
         }

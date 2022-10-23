@@ -742,3 +742,4 @@ D:\Proy\LabPortugal Intranet\LabPortugal Intranet\obj\Debug\net6.0\ref\LabPortug
 C:\Users\Jose\Desktop\CIBERTEC_5TO\Desarrollo de Servicios WEB\Proyecto\DesarrolloSW__Proyecto\App\LabPortugal Intranet\LabPortugal Intranet\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll
 C:\Users\Jose\Desktop\CIBERTEC_5TO\Desarrollo de Servicios WEB\Proyecto\DesarrolloSW__Proyecto\App\LabPortugal Intranet\LabPortugal Intranet\obj\Debug\net6.0\scopedcss\Views\Shared\_Empty.cshtml.rz.scp.css
 C:\Users\Jose\Desktop\CIBERTEC_5TO\Desarrollo de Servicios WEB\Proyecto\DesarrolloSW__Proyecto\App\LabPortugal Intranet\LabPortugal Intranet\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout - Copia.cshtml.rz.scp.css
+C:\Users\Jose\Desktop\CIBERTEC_5TO\Desarrollo de Servicios WEB\Proyecto\DesarrolloSW__Proyecto\App\LabPortugal Intranet\LabPortugal Intranet\obj\Debug\net6.0\scopedcss\Views\Shared\_Ruc.cshtml.rz.scp.css

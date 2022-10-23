@@ -31,6 +31,7 @@ create table if not exists tb_laboratorio
 	telefono_laboratorio varchar(90) not null,
 	estado boolean not null
 );
+
 create table if not exists tb_producto
 (
 	id_producto char(10) primary key,

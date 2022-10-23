@@ -7,7 +7,7 @@
     height: 88%;
 }
 .main-container > div {
-    height: 60%;
+    /*height: 60%;*/
 }
 
 .main-container > div > div {
@@ -19,12 +19,15 @@
     height: 6%;
 }
 
-.column-right-c {
+.column-right-c-login {
     background-color: #79CD98; /*A6DCC2*/
 }
+.column-right-c-register {
+    background-color: #e0b55d;
+}
 
-.column-right-c > div {
-    padding:4rem;
+.column-right-c-login > div, .column-right-c-register > div {
+    padding: 4rem;
 }
 
 .form-field > div {
@@ -32,14 +35,73 @@
     border-radius: 0.8rem;
 }
 
-.btn-iniciar-sesion {
-    background-color: #4EAA94;
+.btn-auth {
     border: 1px solid black;
     border-radius: 0.5rem;
     height: 45px;
 }
+.btn-auth_iniciar {
+    background-color: #4EAA94;
+}
+.btn-auth_registrar {
+    background-color: #a89003;
+}
 
-.btn-iniciar-sesion:hover {
+.btn-auth_iniciar:hover {
     background-color: #2f8e77;
-   
+}
+
+.btn-auth_registrar:hover {
+    background-color: #756506;
+}
+
+.ruc_container {
+    background-image: url("../images/med.jpeg");
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+
+.ruc_container-element {
+    width: 40%;
+    height: 25%;
+    backdrop-filter: blur(50px);
+    border-radius: 15px;
+    box-shadow: 0 -3em 3em rgba(0,0,0,0.1), 0.3em 0.3em 1em rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.ruc_container-form {
+    padding: 30px;
+    height: 100%;
+    padding: 0 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ruc_container > div > div > div {
+    width:100%;
+    
+}
+
+.input_container-ruc > input {
+    border-radius: 8px;
+}
+.button_container-ruc > button {
+    border-radius: 8px;
+}
+
+.ruc_img{
+    position:absolute;
+    left:50%;
+    top:-70%;
+    margin-left:-126px;
+}
+
+.btn-registrar{
+    border-radius:6px;
+    border: 1px solid black;
 }

@@ -1,0 +1,100 @@
+﻿@model IEnumerable<LabPortugal_Intranet.Models.OrdenCompra>
+
+@{
+    ViewData["Title"] = "MantenimientoOrdenCompra";
+}
+<h2 class="text-center">:::: MANTENIMIENTO OREN DE COMPRA::::</h2>
+<br />
+
+<p>
+    @using (Html.BeginForm())
+    {
+        <br />
+        <strong>Seleccione Numero Orden Compra</strong>
+        @Html.DropDownList("numero", (SelectList)ViewBag.OrdenCompra)
+        <br />
+        <br />
+        <input type="submit" value="BUSCAR" class="btn btn-success" />
+        <br />
+    }
+</p>
+
+<p>
+    @Html.ActionLink("Retornar al Modulo Principal", "Index")
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+    
+    <tr>
+        <th>
+                @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.idLaboratorio)
+        </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idProducto)
+            </th>
+        <th>
+                @Html.DisplayNameFor(model => model.numero)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.fechaPedido)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.fechaEntrega)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.condicionesPago)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.valor)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.estado)
+        </th>
+    </tr>
+    <thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.idLaboratorio)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.idProducto)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.numero)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.fechaPedido)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.fechaEntrega)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.condicionesPago)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.valor)
+            </td>
+            <th>
+                    @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <td>
+                    @Html.ActionLink("Actualizar", "ActualizarOrdenCompra", new { id=item.id  }) |
+                    @Html.ActionLink("Eliminar", "EliminarOrdenCompra", new {  id=item.id  })
+            </td>
+        </tr>
+        }
+    <tbody>
+</table>
+<br/>
+<p>
+    @Html.ActionLink("Generar Orden Compra", "VentaProducto")
+</p>
