@@ -1,6 +1,7 @@
 ﻿using LabPortugal_Intranet.Commons;
 using LabPortugal_Intranet.Commons.Imp;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace LabPortugal_Intranet.Models.dao
 {
@@ -8,17 +9,75 @@ namespace LabPortugal_Intranet.Models.dao
     {
         public void Actualizar(Producto o)
         {
-            throw new NotImplementedException();
+            SqlConnection connection = new Conexion().getConnection();
+            using (connection)
+            {
+                connection.Open();
+                try
+                {
+                    SqlCommand command = new SqlCommand("exec usp_producto_actualizar @id, @idlaboratorio, @idtipo, @codigobarras, @descripcion, @marca, @stockproducto,@precioproducto", connection);
+                    command.Parameters.AddWithValue("@id", o.id);
+                    command.Parameters.AddWithValue("@idlaboratorio", o.idLaboratorio);
+                    command.Parameters.AddWithValue("@idtipo", o.idTipoProducto);
+                    command.Parameters.AddWithValue("@codigobarras", o.codigoBarra);
+                    command.Parameters.AddWithValue("@descripcion", o.descripcion);
+                    command.Parameters.AddWithValue("@marca", o.marca);
+                    command.Parameters.AddWithValue("@stockproducto", o.stock);
+                    command.Parameters.AddWithValue("@precioproducto", o.precioUnidad);
+
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.ToString());
+                }
+            }
         }
 
         public void Agregar(Producto o)
         {
-            throw new NotImplementedException();
+            SqlConnection connection = new Conexion().getConnection();
+            using (connection)
+            {
+                connection.Open();
+                try
+                {
+                    SqlCommand command = new SqlCommand("exec usp_producto_agregar @id, @idlaboratorio, @idtipo, @codigobarras, @descripcion, @marca, @stockproducto,@precioproducto", connection);
+                    command.Parameters.AddWithValue("@id", o.id);
+                    command.Parameters.AddWithValue("@idlaboratorio", o.idLaboratorio);
+                    command.Parameters.AddWithValue("@idtipo", o.idTipoProducto);
+                    command.Parameters.AddWithValue("@codigobarras", o.codigoBarra);
+                    command.Parameters.AddWithValue("@descripcion", o.descripcion);
+                    command.Parameters.AddWithValue("@marca", o.marca);
+                    command.Parameters.AddWithValue("@stockproducto", o.stock);
+                    command.Parameters.AddWithValue("@precioproducto", o.precioUnidad);
+
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+            }
         }
 
         public void Eliminar(object o)
         {
-            throw new NotImplementedException();
+            SqlConnection connection = new Conexion().getConnection();
+            using (connection)
+            {
+                connection.Open();
+                try
+                {
+                    SqlCommand command = new SqlCommand("exec usp_producto_eliminar @id", connection);
+                    command.Parameters.AddWithValue("@id", o);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.ToString());
+                }
+            }
         }
 
         public List<Producto> ObtenerTodos()
@@ -63,7 +122,12 @@ namespace LabPortugal_Intranet.Models.dao
 
         public Producto ObtenerXId(object o)
         {
-            throw new NotImplementedException();
+            Debug.WriteLine(o);
+            if (o != null)
+            {
+                return ObtenerTodos().FirstOrDefault(f => f.id.Equals(o));
+            }
+            return new Producto();
         }
     }
 }

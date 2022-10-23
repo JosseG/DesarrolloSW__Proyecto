@@ -39,7 +39,7 @@ namespace LabPortugal_Intranet.Controllers
         public ActionResult Detalles(string id)
         {
             if (id == null)
-                return RedirectToAction("ObtenerTodos");
+                return RedirectToAction("MantenimientoFarmacia");
 
             Farmacia farmacia = farmaciadao.ObtenerXId(id.ToString());
             return View(farmacia);
@@ -47,12 +47,12 @@ namespace LabPortugal_Intranet.Controllers
         public ActionResult Eliminar(string id)
         {
             farmaciadao.Eliminar(id);
-            return RedirectToAction("ObtenerTodos");
+            return RedirectToAction("MantenimientoFarmacia");
         }
         public ActionResult Actualizar(string id)
         {
             if (id == null)
-                return RedirectToAction("ObtenerTodos");
+                return RedirectToAction("MantenimientoFarmacia");
 
             Farmacia farmacia = farmaciadao.ObtenerXId(id.ToString());
             return View(farmacia);
