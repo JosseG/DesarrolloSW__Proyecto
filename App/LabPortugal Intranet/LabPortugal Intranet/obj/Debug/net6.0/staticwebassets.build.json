@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/vsbLUbIBHom182gJ69LxlFUGM/enteCeKmfOWvEPQM=",
+  "Hash": "I7VaRCi7U5JlfMShw6bhbtDus4u2+WXG9vsGQxfXWoY=",
   "Source": "LabPortugal Intranet",
   "BasePath": "_content/LabPortugal Intranet",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\KiaLogo.png"
+    },
+    {
+      "Identity": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\wwwroot\\images\\laboratorio.jpg",
+      "SourceId": "LabPortugal Intranet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\wwwroot\\",
+      "BasePath": "_content/LabPortugal Intranet",
+      "RelativePath": "images/laboratorio.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\laboratorio.jpg"
     },
     {
       "Identity": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\wwwroot\\images\\med.jpeg",

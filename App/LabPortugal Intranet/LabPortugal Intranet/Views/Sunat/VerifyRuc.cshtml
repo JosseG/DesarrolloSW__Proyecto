@@ -14,9 +14,14 @@
                 <div>
                     <div class=""><h2>Verificar RUC</h2></div>
                     <form asp-controller="Sunat" asp-action="VerifyRuc" method="post">
-                        <div class="w-100 py-3  input_container-ruc"><input placeholder="Ingrese el RUC" asp-for="ruc" type="text" class="w-100 form-control"/></div>
+                        <div class="w-100 py-3  input_container-ruc"><input autocomplete="off" placeholder="Ingrese el RUC" asp-for="ruc" type="text" class="w-100 form-control"/></div>
                         <div class="w-100 text-center button_container-ruc"><button class="w-50 btn btn-primary" type="submit">Enviar</button></div>
                     </form>
+                    <div>
+                        <p class="text-danger m-3 fw-bold">
+                            @ViewBag.mensaje
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

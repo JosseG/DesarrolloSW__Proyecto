@@ -44,8 +44,8 @@ namespace LabPortugal_Intranet.Controllers
                             {
                                 if (!data.Contains("<html>"))
                                 {
-                                    
-                                    ViewBag.mensaje = data;
+
+                                    return RedirectToAction("Welcome","Farmacia");
                                 }
                                 else
                                 {
@@ -55,7 +55,6 @@ namespace LabPortugal_Intranet.Controllers
                             else
                             {
                                 ViewBag.mensaje = "Sin datos";
-
                             }
                         }
                     }
@@ -69,7 +68,5 @@ namespace LabPortugal_Intranet.Controllers
             return View();
         }
         
-
-
     }
 }

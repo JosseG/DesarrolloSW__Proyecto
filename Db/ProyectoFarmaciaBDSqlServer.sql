@@ -144,6 +144,7 @@ go
 
 insert into tb_usuario_farmacia(id_farmacia,alias_usuario_farmacia,contrasena_usuario_farmacia,estado) values ('FR00000001','admin','admin',1 )
 insert into tb_usuario_farmacia(id_farmacia,alias_usuario_farmacia,contrasena_usuario_farmacia,estado) values ('FR00000002','vendedor','vendedor',1 )
+insert into tb_usuario_farmacia(id_farmacia,alias_usuario_farmacia,contrasena_usuario_farmacia,estado) values ('FR00000003','mifarma','mifarma123',1 )
 go
 
 /*--------------------------------------------------------------------------------*/
