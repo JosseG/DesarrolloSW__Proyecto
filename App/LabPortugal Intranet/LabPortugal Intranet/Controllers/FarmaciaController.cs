@@ -2,12 +2,20 @@
 using LabPortugal_Intranet.Models.dao;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+
 using System.Diagnostics;
+using System.IO;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Web;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace LabPortugal_Intranet.Controllers
 {
     public class FarmaciaController : Controller
     {
+        private readonly IHostingEnvironment _env;
+
         OrdenCompraDAO ordenCompraDAO = new OrdenCompraDAO();
         LaboratorioDAO laboratorioDAO = new LaboratorioDAO();
         TipoProductoDAO tipoproductodao = new TipoProductoDAO();
@@ -198,6 +206,26 @@ namespace LabPortugal_Intranet.Controllers
             Producto producto = productodao.ObtenerXId(id.ToString());
             return View(producto);
             //return View(ordenCompraDAO.ObtenerTodos());
+        }
+
+
+
+        public FarmaciaController(IHostingEnvironment env)
+        {
+            _env = env;
+        }
+        public ActionResult Imagen(string id)
+        {
+            Producto producto = productodao.ObtenerXId(id);
+            string path = Path.Combine(_env.WebRootPath, "producto", producto.imagenProducto);
+            //string path = HttpContext. Current.Server.MapPath(producto.imagenProducto);
+            byte[] byteimage = System.IO.File.ReadAllBytes(path);
+            MemoryStream memoryStream = new MemoryStream(byteimage);
+            Image image = Image.FromStream(memoryStream);
+            memoryStream = new MemoryStream();
+            image.Save(memoryStream, ImageFormat.Jpeg);
+            memoryStream.Position = 0;
+            return File(memoryStream, "image/Jpg");
         }
 
     }

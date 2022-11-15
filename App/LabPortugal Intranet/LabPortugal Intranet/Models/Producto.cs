@@ -13,6 +13,7 @@ namespace LabPortugal_Intranet.Models
         [Display(Name = "Marca")] public string marca { get; set; }
         [Display(Name = "Stock")] public int stock { get; set; }
         [Display(Name = "PrecioUnid")] public double precioUnidad { get; set; }
+        public string imagenProducto  { get; set; }
         [Display(Name = "Estado")] public bool estado { get; set; }
 
 

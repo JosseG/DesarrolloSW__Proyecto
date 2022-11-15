@@ -7,9 +7,15 @@
 <h3>Compra Farmaco</h3>
 
 <div>
-
+ 
+        
     <hr />
     <dl class="row">
+        <dt class ="text-lg-start">
+
+            <img width="300" height="280" src="@Url.Action("Imagen","Farmacia", new {id =  Model.id})" />
+
+        </dt>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.id)
         </dt>
@@ -58,15 +64,61 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.precioUnidad)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.precioUnidad)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.precioUnidad)
-        </dd>
+       
     </dl>
 </div>
 <div>
+    <input type="number" class="form-control numbers" min="0" />
+    <p>
+        @*@Html.ActionLink("Comprar (ActionLink)", "agregarCarrito", "Carrito", new {id = 2 }, new {cantidad = 2}, null)*@
+        @*@Html.ActionLink("Comprar (ActionLink)", "agregarCarrito", "Carrito", new {id = Model.id }, null)*@
+
+        <a href="#" class="agregar">Agregar Producto</a>
+    </p>
+  
+   
     <a asp-action="VentaProducto">Ir a lista Farmaco</a>
     <a asp-action="ListaOrdenCompra">Comprar</a>
 </div>
+
+@section Scripts
+    {
+    <script>
+        $(function () {
+            $(".agregar").on("click", function (event) {
+                event.preventDefault();
+
+                var ProductoId = $('dl dd').eq(0).text();//$(this).parent().parent().find("dd:eq(0)").text();
+                var cantidad = $(this).parent().parent().find("input").val();
+               
+                $.ajax(
+                    {
+                        url: "@Url.Action("agregarCarrito","Carrito")",
+                        data: { id: ProductoId, cantidad: cantidad },
+                        type: "post",   
+                        success: function (response) {
+                            window.location.href = "@Url.Action("agregarCarrito","Carrito")";
+                        },
+                        error: function (err, error) {
+                            alert(error);
+                        }
+                    }
+                );
+
+            });
+        });
+
+
+        $(".number").keydown(function (e) {
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 40]) !== -1 ||
+                (e.keyCode == 65 && e.ctrlkey == true) ||
+                (e.keyCode >= 35 && e.keyCode <= 39)) {
+                return;
+            }
+
+            if ((e.shiftkey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+            });
+    </script>
+    }

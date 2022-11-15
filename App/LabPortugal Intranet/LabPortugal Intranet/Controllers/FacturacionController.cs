@@ -14,8 +14,6 @@ namespace LabPortugal_Intranet.Controllers
             return View(facturacionDAO.ObtenerTodos());
         }
 
-
-
         public IActionResult Agregar()
         {
             return View(new Facturacion());

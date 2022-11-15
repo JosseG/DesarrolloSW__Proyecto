@@ -1,0 +1,63 @@
+﻿@using System.Text.Json
+@using Microsoft.AspNetCore.Http
+@using System.Diagnostics
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<h2 class="text-center">Agregar Productos al Carrito </h2>
+<br />
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th></th>
+            <th>Nombre</th>
+            <th></th>
+            <th>Precio Unitario</th>
+            <th></th>
+            <th>Cantidad</th>
+            <th></th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            double total = 0;
+        }
+        @if (HttpContextAccessor.HttpContext.Session.GetString("carrito") != null)
+        {
+            @foreach (var item in JsonSerializer.Deserialize<List<CarritoItem>>(HttpContextAccessor.HttpContext.Session.GetString("carrito")))
+            {
+                total += (double)(item.Cantidad * item.Producto.precioUnidad);
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Producto.id)</td>
+                    <th></th>
+                    <td>@Html.DisplayFor(modelItem => item.Producto.descripcion)</td>
+                    <th></th>
+                    <td>@String.Format("{0:C}",( item.Producto.precioUnidad))</td>
+                    <th></th>
+                    <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                    <th></th>
+                    <td>@String.Format("{0:C}", (item.Cantidad * item.Producto.precioUnidad))</td>
+                    <td>@Html.ActionLink("Eliminar", "Delete", new {  id=item.Producto.id  })</td>
+                </tr>
+            }
+        }
+    </tbody>
+    <tr></tr>
+    <tfoot>
+        <tr></tr>
+        <tr>
+            <th colspan="8">Total</th>
+            <th>@String.Format("{0:C}", total)</th>
+        </tr>
+    </tfoot>
+</table>
+<br />
+@Html.ActionLink("Seguir Comprando", "VentaProducto", "Farmacia", null, null)
+<br />
+<br />
+@Html.ActionLink("Terminar Compra", "FinalizarCompra", "Carrito", null, null)
+
+
+
