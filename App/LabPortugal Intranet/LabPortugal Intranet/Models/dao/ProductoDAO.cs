@@ -106,7 +106,8 @@ namespace LabPortugal_Intranet.Models.dao
                             marca = reader.GetString(6),
                             stock = reader.GetInt32(7),
                             precioUnidad = reader.GetDouble(8),
-                            estado = reader.GetBoolean(9)
+                            imagenProducto = reader.GetString(9),
+                            estado = reader.GetBoolean(10)
 
                         });
                     }

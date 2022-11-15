@@ -32,6 +32,7 @@ create table if not exists tb_laboratorio
 	estado boolean not null
 );
 
+
 create table if not exists tb_producto
 (
 	id_producto char(10) primary key,
@@ -113,6 +114,7 @@ create table if not exists tb_facturacion
     subtotal_facturacion float not null,
     estado boolean not null
 );
+
 
 create table if not exists tb_producto_farmacia_facturacion
 (
