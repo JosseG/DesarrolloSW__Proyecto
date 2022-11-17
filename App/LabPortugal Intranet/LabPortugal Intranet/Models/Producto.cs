@@ -8,6 +8,7 @@ namespace LabPortugal_Intranet.Models
         [Display(Name = "Id_Lab")] public string idLaboratorio { get; set; }
         [Display(Name = "idTipoProd")] public int idTipoProducto { get; set; }
         [Display(Name = "TipoProd")] public string TipoProducto { get; set; }
+        public List<TipoProducto> TiposProductosList { get; set; }
         [Display(Name = "CodBarra")] public string codigoBarra { get; set; }
         [Display(Name = "Descripcion")] public string descripcion { get; set; }
         [Display(Name = "Marca")] public string marca { get; set; }

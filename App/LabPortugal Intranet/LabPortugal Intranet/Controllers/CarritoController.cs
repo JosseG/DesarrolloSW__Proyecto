@@ -5,6 +5,7 @@ using System.Web;
 using LabPortugal_Intranet.Models;
 using LabPortugal_Intranet.Models.dao;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace LabPortugal_Intranet.Controllers
@@ -78,6 +79,23 @@ namespace LabPortugal_Intranet.Controllers
             }
             return Json(new { response = true });
         }
+
+        
+        public ActionResult Delete(string id)
+        {
+            var str = HttpContext.Session.GetString("carrito");
+            List<CarritoItem> carritoItems = JsonSerializer.Deserialize<List<CarritoItem>>(str);
+            carritoItems.RemoveAt(getIndice(id));
+            Debug.WriteLine(carritoItems.Count);
+            var content = JsonSerializer.Serialize(carritoItems);
+            HttpContext.Session.SetString("carrito", content);
+            return View("agregarCarrito");
+        }
+
+        /*public ActionResult FinalizarCompra()
+        {
+            return View();
+        }*/
 
     }
 }

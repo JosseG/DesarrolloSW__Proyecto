@@ -538,19 +538,20 @@ go
 /*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_producto_agregar
-@id char(10),
+-- @id char(10),
 @idlaboratorio char(10),
 @idtipo int,
 @codigobarras varchar(14),
 @descripcion varchar(240),
 @marca varchar(12),
 @stockproducto int,
-@precioproducto float
+@precioproducto float,
+@imagenproducto varchar(50)
 as
 begin
 	declare @codigo char(10)
 	set @codigo=dbo.autogeneraproducto()
-	insert into tb_producto values (@codigo,@idlaboratorio,@idtipo,@codigobarras,@descripcion,@marca,@stockproducto,@precioproducto,null,1)
+	insert into tb_producto values (@codigo,@idlaboratorio,@idtipo,@codigobarras,@descripcion,@marca,@stockproducto,@precioproducto,@imagenproducto,1)
 
 end
 go
@@ -626,7 +627,7 @@ create or alter procedure usp_facturacion_listar
 as
 begin
 	select * from tb_facturacion
-end
+end	
 go
 /*--------------------------------------------------------------------------------*/
 

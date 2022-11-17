@@ -10,21 +10,21 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AgregarStockProducto">
+        <form asp-action="AgregarStockProducto" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="id" class="control-label"></label>
-                <input asp-for="id" class="form-control" />
-                <span asp-validation-for="id" class="text-danger"></span>
-            </div>
+           
             <div class="form-group">
                 <label asp-for="idLaboratorio" class="control-label"></label>
-                <input asp-for="idLaboratorio" class="form-control" />
+                <input asp-for="idLaboratorio" class="form-control" value="LAB0000001" readonly="readonly" />
                 <span asp-validation-for="idLaboratorio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="idTipoProducto" class="control-label"></label>  
-                <input asp-for="idTipoProducto" class="form-control" />
+                <label asp-for="TipoProducto" class="control-label"></label>  
+                <br />
+                @*@Html.DropDownList("TiposProductosList", (SelectList)ViewBag.TipoProducto)*@
+                <select id="drpEmpList" class="form-control" asp-for="idTipoProducto" asp-items="@((SelectList)ViewBag.TipoProducto)">
+                    
+                </select>
                 <span asp-validation-for="idTipoProducto" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -49,8 +49,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="precioUnidad" class="control-label"></label>
-                <input asp-for="precioUnidad" class="form-control" />
+                <input asp-for="precioUnidad" class="form-control" /> 
                 <span asp-validation-for="precioUnidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="imagenProducto" class="control-label"></label>
+                <div class="col-md-10">
+                    <input type="file" name="postedFile"  />                   
+                </div>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">

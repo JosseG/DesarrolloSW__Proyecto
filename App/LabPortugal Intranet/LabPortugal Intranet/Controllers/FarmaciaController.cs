@@ -89,7 +89,7 @@ namespace LabPortugal_Intranet.Controllers
             ViewBag.nombre = nombre;
             ViewBag.TipoProducto = new SelectList(tipoproductodao.ObtenerTodos().ToList(), "id", "nombre", id);
             var lista = from p in productodao.ObtenerTodos()
-                        where p.descripcion.ToUpper().Contains(nombre.ToUpper())
+                        where (p.descripcion.ToUpper().Contains(nombre.ToUpper()))
                         && (id != "" && p.idTipoProducto == Convert.ToInt32(id))
                         select p;
             return View(lista.ToList());
@@ -97,14 +97,25 @@ namespace LabPortugal_Intranet.Controllers
         }
         public ActionResult AgregarStockProducto()
         {
+            
             ViewBag.TipoProducto = new SelectList(tipoproductodao.ObtenerTodos().ToList(), "id", "nombre");
             return View(new Producto());
         }
         [HttpPost]
-        public ActionResult AgregarStockProducto(Producto producto)
-        {
+        public ActionResult AgregarStockProducto(Producto producto, IFormFile postedFile)
+        {          
+            producto.imagenProducto = Path.GetFileName(postedFile.FileName);
             productodao.Agregar(producto);
-            return View(producto);
+
+            string ruta = Path.Combine(_env.WebRootPath, "producto", producto.imagenProducto);           
+            using (FileStream stream = new FileStream(ruta, FileMode.Create))
+            {
+                postedFile.CopyTo(stream);  
+            }
+            ViewBag.TipoProducto = new SelectList(tipoproductodao.ObtenerTodos().ToList(), "id", "nombre");
+                var idTipoProducto = producto.idTipoProducto;
+                return View(producto);
+            
         }
         public ActionResult ActualizarStockProducto(string id)
         {
@@ -177,7 +188,7 @@ namespace LabPortugal_Intranet.Controllers
 
 
         //##################################################################################
-        //---------------------------------VENTA PRODUCTO----(SEBASTIAN USA LA CLASE PRODUCTO Y DAO PARA ESTA PARTE)
+        //---------------------------------VENTA PRODUCTO----
         //##################################################################################
 
         public ActionResult VentaProducto(string nombre, string id)
@@ -217,14 +228,22 @@ namespace LabPortugal_Intranet.Controllers
         public ActionResult Imagen(string id)
         {
             Producto producto = productodao.ObtenerXId(id);
-            string path = Path.Combine(_env.WebRootPath, "producto", producto.imagenProducto);
-            //string path = HttpContext. Current.Server.MapPath(producto.imagenProducto);
-            byte[] byteimage = System.IO.File.ReadAllBytes(path);
-            MemoryStream memoryStream = new MemoryStream(byteimage);
-            Image image = Image.FromStream(memoryStream);
-            memoryStream = new MemoryStream();
-            image.Save(memoryStream, ImageFormat.Jpeg);
-            memoryStream.Position = 0;
+            MemoryStream memoryStream;
+            if (!String.IsNullOrEmpty(producto.imagenProducto))
+            {
+                string path = Path.Combine(_env.WebRootPath, "producto", producto.imagenProducto);
+                //string path = HttpContext. Current.Server.MapPath(producto.imagenProducto);
+                byte[] byteimage = System.IO.File.ReadAllBytes(path);
+                memoryStream = new MemoryStream(byteimage);
+                Image image = Image.FromStream(memoryStream);
+                memoryStream = new MemoryStream();
+                image.Save(memoryStream, ImageFormat.Jpeg);
+                memoryStream.Position = 0;
+                
+            }
+            else
+                 memoryStream = new MemoryStream();
+
             return File(memoryStream, "image/Jpg");
         }
 

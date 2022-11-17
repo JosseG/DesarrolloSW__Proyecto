@@ -14,14 +14,14 @@ namespace LabPortugal_Intranet.Controllers
             return View(facturacionDAO.ObtenerTodos());
         }
 
-        public IActionResult Agregar()
+        public IActionResult AgregarFacturacion()
         {
             return View(new Facturacion());
         }
 
 
         [HttpPost]
-        public ActionResult Agregar(Facturacion facturacion)
+        public ActionResult AgregarFacturacion(Facturacion facturacion)
         {
             facturacionDAO.Agregar(facturacion);
             return View(facturacion);

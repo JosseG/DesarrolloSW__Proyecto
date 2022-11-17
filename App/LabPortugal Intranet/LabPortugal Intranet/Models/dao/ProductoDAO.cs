@@ -42,21 +42,24 @@ namespace LabPortugal_Intranet.Models.dao
                 connection.Open();
                 try
                 {
-                    SqlCommand command = new SqlCommand("exec usp_producto_agregar @id, @idlaboratorio, @idtipo, @codigobarras, @descripcion, @marca, @stockproducto,@precioproducto", connection);
-                    command.Parameters.AddWithValue("@id", o.id);
+                    SqlCommand command = new SqlCommand("exec usp_producto_agregar  @idlaboratorio, @idtipo, @codigobarras, @descripcion, @marca, @stockproducto,@precioproducto,@imagenproducto", connection);
+                    //command.Parameters.AddWithValue("@id", o.id);
                     command.Parameters.AddWithValue("@idlaboratorio", o.idLaboratorio);
-                    command.Parameters.AddWithValue("@idtipo", o.idTipoProducto);
+                    command.Parameters.AddWithValue("@idtipo", o.idTipoProducto); 
+
                     command.Parameters.AddWithValue("@codigobarras", o.codigoBarra);
                     command.Parameters.AddWithValue("@descripcion", o.descripcion);
                     command.Parameters.AddWithValue("@marca", o.marca);
                     command.Parameters.AddWithValue("@stockproducto", o.stock);
                     command.Parameters.AddWithValue("@precioproducto", o.precioUnidad);
+                    command.Parameters.AddWithValue("@imagenproducto", o.imagenProducto);
 
                     command.ExecuteNonQuery();
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.ToString());
+                    
                 }
             }
         }
@@ -106,7 +109,7 @@ namespace LabPortugal_Intranet.Models.dao
                             marca = reader.GetString(6),
                             stock = reader.GetInt32(7),
                             precioUnidad = reader.GetDouble(8),
-                            imagenProducto = reader.GetString(9),
+                            imagenProducto = reader.IsDBNull(9)? "":reader.GetString(9),
                             estado = reader.GetBoolean(10)
 
                         });
