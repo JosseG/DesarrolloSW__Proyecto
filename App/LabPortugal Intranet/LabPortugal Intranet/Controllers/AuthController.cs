@@ -39,6 +39,12 @@ namespace LabPortugal_Intranet.Controllers
 
                 Farmacia farmacia = farmaciaDAO.ObtenerXId(usuarioFarmaciaObtenido.idFarmacia);
 
+                Debug.WriteLine(farmacia.id + " - " + farmacia.razonSocial + " - " + farmacia.estado);
+
+                if (farmacia.estado == false)
+                {
+                    return RedirectToAction("Index");
+                }
 
                 FarmaciaEnSesionService.setSessionFarmacia(HttpContext, farmacia);
                 UsuarioEnSesionService.setSessionUser(HttpContext, usuarioFarmaciaObtenido);
@@ -104,6 +110,13 @@ namespace LabPortugal_Intranet.Controllers
                 return RedirectToAction("SignUpPharmacy");
             }
             Farmacia farmaciaToSesion = farmaciaDAO.ObtenerXId(googleFarmacia.idFarmacia);
+
+            Debug.WriteLine(farmaciaToSesion.id + " - " + farmaciaToSesion.razonSocial + " - " + farmaciaToSesion.estado);
+
+            if (farmaciaToSesion.estado == false)
+            {
+                return RedirectToAction("Index");
+            }
             FarmaciaEnSesionService.setSessionFarmacia(HttpContext, farmaciaToSesion);
             GoogleFarmaciaEnSesionService.setSessionGoogleFarmacia(HttpContext, googleFarmacia);
 

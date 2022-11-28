@@ -81,10 +81,11 @@ create or alter procedure usp_farmacia_actualizar
 @ruc char(14),
 @razonsocial varchar(90),
 @telefono varchar(15),
-@direccion varchar(90)
+@direccion varchar(90),
+@estado bit
 as
 begin
-	update tb_farmacia set ruc_farmacia = @ruc, razonsocial_farmacia = @razonsocial, telefono_farmacia = @telefono, direccion_farmacia = @direccion where id_farmacia = @id
+	update tb_farmacia set ruc_farmacia = @ruc, razonsocial_farmacia = @razonsocial, telefono_farmacia = @telefono, direccion_farmacia = @direccion, estado = @estado where id_farmacia = @id
 end
 go
 /*--------------------------------------------------------------------------------*/

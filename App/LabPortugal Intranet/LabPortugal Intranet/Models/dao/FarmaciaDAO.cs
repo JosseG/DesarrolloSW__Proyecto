@@ -17,13 +17,14 @@ namespace LabPortugal_Intranet.Models.dao
                 try
                 {
 
-                    SqlCommand command = new SqlCommand("exec usp_farmacia_actualizar @id,@ruc,@razonsocial,@telefono,@direccion", connection);
+                    SqlCommand command = new SqlCommand("exec usp_farmacia_actualizar @id,@ruc,@razonsocial,@telefono,@direccion,@estado", connection);
 
                     command.Parameters.AddWithValue("@id", o.id);
                     command.Parameters.AddWithValue("@ruc", o.ruc);
                     command.Parameters.AddWithValue("@razonsocial", o.razonSocial);
                     command.Parameters.AddWithValue("@telefono", o.telefono);
                     command.Parameters.AddWithValue("@direccion", o.direccion);
+                    command.Parameters.AddWithValue("@estado", o.estado);
 
                     command.ExecuteNonQuery();
 
