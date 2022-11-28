@@ -8,157 +8,141 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LabPortugal_Intranet
 build_property.RootNamespace = LabPortugal_Intranet
-build_property.ProjectDir = C:\Users\Jose\Desktop\CIBERTEC_5TO\Desarrollo de Servicios WEB\Proyecto\DesarrolloSW__Proyecto\App\LabPortugal Intranet\LabPortugal Intranet\
+build_property.ProjectDir = C:\Users\Edith\Documents\CIBERTEC QUINTO CICLO\DESARROLLO DE SERVICIOS WEB I - lunes\proyecto\FINAL\LabPortugal Intranet\LabPortugal Intranet\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Jose\Desktop\CIBERTEC_5TO\Desarrollo de Servicios WEB\Proyecto\DesarrolloSW__Proyecto\App\LabPortugal Intranet\LabPortugal Intranet
+build_property.MSBuildProjectDirectory = C:\Users\Edith\Documents\CIBERTEC QUINTO CICLO\DESARROLLO DE SERVICIOS WEB I - lunes\proyecto\FINAL\LabPortugal Intranet\LabPortugal Intranet
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Auth/Index.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Auth/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Auth/SignUp.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Auth/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Auth/SignUpPharmacy.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Auth/SignUpPharmacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXBQaGFybWFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Auth/SignUpUserPharmacy.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Auth/SignUpUserPharmacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXBVc2VyUGhhcm1hY3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Carrito/agregarCarrito.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Carrito/agregarCarrito.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xhZ3JlZ2FyQ2Fycml0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Facturacion/AgregarFacturacion.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Facturacion/AgregarFacturacion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdHVyYWNpb25cQWdyZWdhckZhY3R1cmFjaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/Actualizar.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/Actualizar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcQWN0dWFsaXphci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/ActualizarOrdenCompra.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcQWN0dWFsaXphck9yZGVuQ29tcHJhLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/ActualizarStockProducto.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/ActualizarStockProducto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcQWN0dWFsaXphclN0b2NrUHJvZHVjdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/Agregar.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/Agregar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcQWdyZWdhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/AgregarStockProducto.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/AgregarStockProducto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcQWdyZWdhclN0b2NrUHJvZHVjdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/BuscarProductoTipoProducto.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/BuscarProductoTipoProducto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcQnVzY2FyUHJvZHVjdG9UaXBvUHJvZHVjdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/Detalles.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/Detalles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcRGV0YWxsZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/DetalleStockProducto.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/DetalleStockProducto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcRGV0YWxsZVN0b2NrUHJvZHVjdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/DetalleVentaProducto.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/DetalleVentaProducto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcRGV0YWxsZVZlbnRhUHJvZHVjdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/EliminarOrdenCompra.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcRWxpbWluYXJPcmRlbkNvbXByYS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/EliminarStockProducto.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/EliminarStockProducto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcRWxpbWluYXJTdG9ja1Byb2R1Y3RvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/Index.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/ListaOrdenCompra.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcTGlzdGFPcmRlbkNvbXByYS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/MantenimientoFarmacia.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/MantenimientoFarmacia.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcTWFudGVuaW1pZW50b0Zhcm1hY2lhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/MantenimientoOrdenCompra.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcTWFudGVuaW1pZW50b09yZGVuQ29tcHJhLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/MantenimientoStockProducto.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/MantenimientoStockProducto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcTWFudGVuaW1pZW50b1N0b2NrUHJvZHVjdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/VentaProducto.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/VentaProducto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcVmVudGFQcm9kdWN0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/Welcome.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Farmacia/Welcome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWFjaWFcV2VsY29tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Home/Index.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Home/Privacy.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/Error.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Sunat/SuccessRUC.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Sunat/SuccessRUC.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VuYXRcU3VjY2Vzc1JVQy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Sunat/VerifyRuc.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Sunat/VerifyRuc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VuYXRcVmVyaWZ5UnVjLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/_ViewImports.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/_ViewStart.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_Clean.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_Clean.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DbGVhbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-ix6nfzotqr
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_Empty.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_Empty.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FbXB0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-9fvcmm7ha8
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_Facturacion.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_Facturacion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9GYWN0dXJhY2lvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-3afdtrr4ym
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_Layout.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-21j9gnw6nj
 
-[C:/Users/Jose/Desktop/CIBERTEC_5TO/Desarrollo de Servicios WEB/Proyecto/DesarrolloSW__Proyecto/App/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_Ruc.cshtml]
+[C:/Users/Edith/Documents/CIBERTEC QUINTO CICLO/DESARROLLO DE SERVICIOS WEB I - lunes/proyecto/FINAL/LabPortugal Intranet/LabPortugal Intranet/Views/Shared/_Ruc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9SdWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-aaww2ecfps

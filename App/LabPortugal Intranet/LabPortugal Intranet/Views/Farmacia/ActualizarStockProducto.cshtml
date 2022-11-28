@@ -10,16 +10,21 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <dt class="text-lg-start">
+            <img width="300" height="280" src="@Url.Action("Imagen","Farmacia", new {id =  Model.id})" />
+        </dt>
+
+
         <form asp-action="ActualizarStockProducto">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="id" class="control-label"></label>
-                <input asp-for="id" class="form-control" />
+                <input asp-for="id" class="form-control"  readonly="readonly" />
                 <span asp-validation-for="id" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="idLaboratorio" class="control-label"></label>
-                <input asp-for="idLaboratorio" class="form-control" />
+                <input asp-for="idLaboratorio" class="form-control" value="LAB0000001" readonly="readonly" />
                 <span asp-validation-for="idLaboratorio" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -66,7 +71,7 @@
 </div>
 
 <div>
-    <a asp-action="MantenimientoStockProducto">Back to List</a>
+    <a asp-action="MantenimientoStockProducto">Regresar a lista</a>
 </div>
 
 @section Scripts {

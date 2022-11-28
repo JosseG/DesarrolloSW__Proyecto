@@ -10,6 +10,11 @@
     
     <hr />
     <dl class="row">
+        <dt class="text-lg-start">
+            <img width="300" height="280" src="@Url.Action("Imagen","Farmacia", new {id =  Model.id})" />
+        </dt>
+
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.id)
         </dt>
@@ -61,7 +66,7 @@
     </dl>
 </div>
 <div>
-    <a asp-action="MantenimientoStockProducto">Back to List</a>
+    <a asp-action="MantenimientoStockProducto">Regresar a lista</a>
 </div>
 
 

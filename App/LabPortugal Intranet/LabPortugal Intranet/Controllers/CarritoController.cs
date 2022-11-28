@@ -13,7 +13,7 @@ namespace LabPortugal_Intranet.Controllers
     public class CarritoController : Controller
     {
         // GET: Carrito
-        OrdenCompra ordcom = new Models.OrdenCompra();
+        
         DetalleFacturacion detfac = new Models.DetalleFacturacion();
         Producto prod = new Models.Producto();
 

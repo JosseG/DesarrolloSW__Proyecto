@@ -873,97 +873,6 @@ go
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 
-if OBJECT_ID('tb_orden_compra','U') is null create table tb_orden_compra
-(
-	id_orden_compra int identity(1,1) primary key,
-    id_laboratorio char(10) not null,
-	id_producto char(10) not null, 
-	nro_orden_compra char(10) unique not null,
-	fechaorden_compra date not null,
-	fechaentrega date not null,
-	condicionespago varchar(25) not null,
-	valortotal_orden float not null,
-	estado bit not null,
-	foreign key (id_laboratorio) references tb_laboratorio(id_laboratorio),
-	foreign key (id_producto) references tb_producto(id_producto)
-)
-go
-
-
-
-insert into tb_orden_compra values ('LAB0000001','PROD000001','NRO0000001','2022-10-01','2022-10-03','credito','100.00',1)
-go
-insert into tb_orden_compra values ('LAB0000001','PROD000002','NRO0000002','2022-09-01','2022-09-03','credito','100.00',1)
-go
-
-
-
-/*--------------------------------------------------------------------------------*/
-
-create or alter procedure usp_orden_compra_listar
-as
-begin
-	select * from tb_orden_compra
-end
-go
-/*--------------------------------------------------------------------------------*/
-
-create or alter procedure usp_orden_compra_agregar
-@idlaboratorio char(10),
-@idproducto char(10),
-@numordencompra char(10),
-@fechaordencompra date,
-@fechaentrega date,
-@condicionespago varchar(25),
-@valortotalorden float
-
-as
-begin
-	insert into tb_orden_compra values (@idlaboratorio,@idproducto,@numordencompra,@fechaordencompra,@fechaentrega,@condicionespago,@valortotalorden,1)
-end
-go
-/*--------------------------------------------------------------------------------*/
-
-create or alter procedure usp_orden_compra_actualizar
-@idordencompra int,
-@idlaboratorio char(10),
-@idproducto char(10),
-@numordencompra char(10),
-@fechaordencompra date,
-@fechaentrega date,
-@condicionespago varchar(25),
-@valortotalorden float
- 
-as
-begin
-	update tb_orden_compra set id_laboratorio=@idlaboratorio,id_producto=@idproducto, nro_orden_compra= @numordencompra, fechaorden_compra=@fechaordencompra, fechaentrega=@fechaentrega, condicionespago=@condicionespago, valortotal_orden=@valortotalorden where id_orden_compra = @idordencompra
-end
-go
-
-/*--------------------------------------------------------------------------------*/
-
-create or alter procedure usp_orden_compra_eliminar
-@idordencompra int
-as
-begin
-	update tb_orden_compra set estado = 0 where id_orden_compra = @idordencompra
-end
-go
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 create table tb_cargo
@@ -1007,14 +916,8 @@ INSERT INTO tb_cargo_usuario_farmacia values (2,'UF00000002');
 select * from tb_cargo_usuario_farmacia
 go
 
-
 select * from tb_cargo_usuario_google
 go
-
-
-
-
-
 
 select * from tb_google_farmacia
 go

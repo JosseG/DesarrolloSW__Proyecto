@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {}
+    "C:\\Users\\Edith\\Documents\\CIBERTEC QUINTO CICLO\\DESARROLLO DE SERVICIOS WEB I - lunes\\proyecto\\FINAL\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {
+    "C:\\Users\\Edith\\Documents\\CIBERTEC QUINTO CICLO\\DESARROLLO DE SERVICIOS WEB I - lunes\\proyecto\\FINAL\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
+        "projectUniqueName": "C:\\Users\\Edith\\Documents\\CIBERTEC QUINTO CICLO\\DESARROLLO DE SERVICIOS WEB I - lunes\\proyecto\\FINAL\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
         "projectName": "LabPortugal Intranet",
-        "projectPath": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
-        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\obj\\",
+        "projectPath": "C:\\Users\\Edith\\Documents\\CIBERTEC QUINTO CICLO\\DESARROLLO DE SERVICIOS WEB I - lunes\\proyecto\\FINAL\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
+        "packagesPath": "C:\\Users\\Edith\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Edith\\Documents\\CIBERTEC QUINTO CICLO\\DESARROLLO DE SERVICIOS WEB I - lunes\\proyecto\\FINAL\\LabPortugal Intranet\\LabPortugal Intranet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Edith\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +75,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -87,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

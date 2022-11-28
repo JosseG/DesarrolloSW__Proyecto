@@ -17,7 +17,7 @@ namespace LabPortugal_Intranet.Controllers
     {
         private readonly IHostingEnvironment _env;
 
-        OrdenCompraDAO ordenCompraDAO = new OrdenCompraDAO();
+        
         LaboratorioDAO laboratorioDAO = new LaboratorioDAO();
         TipoProductoDAO tipoproductodao = new TipoProductoDAO();
         ProductoDAO productodao = new ProductoDAO();
@@ -151,41 +151,6 @@ namespace LabPortugal_Intranet.Controllers
             return View(producto);
         }
 
-
-        //##################################################################################
-        //--------------------------MANTENIMIENTO ORDEN DE COMPRA---------------------------
-        //##################################################################################
-        public ActionResult MantenimientoOrdenCompra(string numero)
-        {
-            if (numero == null) { numero = string.Empty; }
-            ViewBag.OrdenCompra = new SelectList(ordenCompraDAO.ObtenerTodos().ToList(), "numero", "numero", numero);
-            var lista = from p in ordenCompraDAO.ObtenerTodos()
-                        where (numero != "" && p.numero == numero)
-                        select p;
-            return View(lista.ToList());
-        }
-
-        public ActionResult ActualizarOrdenCompra(int id)
-        {
-            if (id == 0)
-                return RedirectToAction("ObtenerTodos");
-            OrdenCompra ordenCompra = ordenCompraDAO.ObtenerXId(id);
-            return View(ordenCompra);
-        }
-        [HttpPost]
-        public ActionResult ActualizarOrdenCompra(OrdenCompra ordenCompra)
-        {
-            ordenCompraDAO.Actualizar(ordenCompra);
-            return View(ordenCompra);
-        }
-        public ActionResult EliminarOrdenCompra(int id)
-        {
-            if (id == 0)
-                return RedirectToAction("ObtenerTodos");
-            OrdenCompra ordenCompra = ordenCompraDAO.ObtenerXId(id);
-            productodao.Eliminar(id);
-            return View(ordenCompra);
-        }
 
 
         //##################################################################################
