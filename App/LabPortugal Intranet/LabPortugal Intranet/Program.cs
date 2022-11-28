@@ -9,25 +9,13 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
 var configuration = builder.Configuration;
 
 
-
-// Add services to the container.
 services.AddControllersWithViews();
-//services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-//    .AddCookie(e =>
-//    {
-//        e.LoginPath = "";
-//        e.ExpireTimeSpan = TimeSpan.FromMinutes(5);
-//        e.AccessDeniedPath = "";
-//    }
-//    );
 
 
 //--------------------------------------------------------------------------
@@ -40,9 +28,6 @@ services.AddSession(o =>
     o.Cookie.IsEssential = true;
 });
 //--------------------------------------------------------------------------
-
-
-
 
 
 services.AddAuthentication(o =>
@@ -82,7 +67,6 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
 
 app.MapControllerRoute(
     name: "default",
