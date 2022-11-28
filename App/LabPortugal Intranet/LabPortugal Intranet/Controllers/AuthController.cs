@@ -69,7 +69,7 @@ namespace LabPortugal_Intranet.Controllers
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
 
-                return RedirectToAction("Index", "Farmacia", new { area = "" });
+                return RedirectToAction("Welcome", "Farmacia", new { area = "" });
             }
             return RedirectToAction("Index");
         }
@@ -140,7 +140,7 @@ namespace LabPortugal_Intranet.Controllers
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
-            return RedirectToAction("Index", "Farmacia", new { area = "" });
+            return RedirectToAction("Welcome", "Farmacia", new { area = "" });
         }
 
         public IActionResult SignUp()
@@ -165,7 +165,6 @@ namespace LabPortugal_Intranet.Controllers
         [HttpPost]
         public IActionResult SignUpPharmacy(Farmacia farmacia)
         {
-            Debug.WriteLine(farmacia.id + " " + farmacia.hasGoogleAccount);
 
             //farmaciaDAO.Agregar(farmacia);
             if (farmacia.hasGoogleAccount)
