@@ -55,20 +55,20 @@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.stock)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10" id="stock">
             @Html.DisplayFor(model => model.stock)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.precioUnidad)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.precioUnidad)
+            @String.Format("{0:C}", (Model.precioUnidad))
         </dd>
        
     </dl>
 </div>
 <div>
-    <input type="number" style ="width:30%;" class="form-control numbers" min="0" />
+    <input type="number" style ="width:30%;" id="cantidad" class="form-control numbers" required min="0" />
     <p style="margin-top:10px;">
         <a  href="#" class="agregar btn btn-warning">Agregar Producto</a>
     </p>
@@ -80,13 +80,42 @@
 @section Scripts
     {
     <script>
+
+
         $(function () {
             $(".agregar").on("click", function (event) {
                 event.preventDefault();
 
                 var ProductoId = $('dl dd').eq(0).text();//$(this).parent().parent().find("dd:eq(0)").text();
                 var cantidad = $(this).parent().parent().find("input").val();
+                var stockProducto =$('#stock').html().trim();
+
+                console.log(cantidad);
+                if(cantidad >= stockProducto){
+                    alert("La cantidad es incorrecta");
+                    $('#cantidad').val("");
+                    console.log(stockProducto);
+                    return;
+                }
+
+                if(cantidad==stockProducto){
+                    alert("La cantidad ingresada debe ser distinto del stock del producto");
+                    $('#cantidad').val("");
+                    return;
+                }
                
+                if(cantidad<1){
+                    alert("Cantidad ingresada debe ser mayor a 0");
+                    $('#cantidad').val("");
+                    return;
+                }
+
+                if(cantidad >= stockProducto/2){
+                    alert("No puede adquirir la mitad de los productos en una sola transacción");
+                    $('#cantidad').val("");
+                    return;
+                }
+
                 $.ajax(
                     {
                         url: "@Url.Action("agregarCarrito","Carrito")",

@@ -22,12 +22,9 @@
     }
 </p>
 @**@<p>
-    <a asp-action="AgregarStockProducto">Nuevo Producto</a>
+    <a class="btn btn-warning" asp-action="AgregarStockProducto">Nuevo Producto</a>
 </p>
-
-<p>
-    @Html.ActionLink("Retornar al Modulo Principal", "Index")
-</p>
+<br />
 <table class="table table-bordered table-striped">
 
     <thead>
@@ -96,9 +93,9 @@
                     @Html.DisplayFor(modelItem => item.estado)
             </td>
             <td>
-                    @Html.ActionLink("Actualizar", "ActualizarStockProducto", new { id=item.id  }) |
-                    @Html.ActionLink("Detalle", "DetalleStockProducto", new {  id=item.id  }) |
-                    @Html.ActionLink("Eliminar", "EliminarStockProducto", new {  id=item.id  })
+                    @Html.ActionLink("Actualizar", "ActualizarStockProducto", new { id=item.id  }, new {@class="btn btn-primary"}) 
+                    @Html.ActionLink("Detalle", "DetalleStockProducto", new {  id=item.id  }, new {@class="btn btn-info"}) 
+                    @Html.ActionLink("Eliminar", "EliminarStockProducto", new {  id=item.id  }, new {@class="btn btn-danger"})
             </td>
         </tr>
         }

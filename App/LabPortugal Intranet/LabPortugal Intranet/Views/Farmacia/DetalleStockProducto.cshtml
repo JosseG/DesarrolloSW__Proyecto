@@ -61,12 +61,12 @@
             @Html.DisplayNameFor(model => model.precioUnidad)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.precioUnidad)
+            @String.Format("{0:C}", (Model.precioUnidad))
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="MantenimientoStockProducto">Regresar a lista</a>
+    <a class="btn btn-dark" style="margin-top:8px;" asp-action="MantenimientoStockProducto">Regresar a lista</a>
 </div>
 
 
