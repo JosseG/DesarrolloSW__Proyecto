@@ -9,9 +9,10 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Web;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
-
+using Microsoft.AspNetCore.Authorization;
 namespace LabPortugal_Intranet.Controllers
 {
+    [Authorize]
     public class FarmaciaController : Controller
     {
         private readonly IHostingEnvironment _env;

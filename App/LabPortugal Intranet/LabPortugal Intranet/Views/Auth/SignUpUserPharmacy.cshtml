@@ -1,4 +1,4 @@
-﻿@model UsuarioFarmacia
+﻿@model LabPortugal_Intranet.Models.UsuarioFarmacia
 
 @{
     ViewData["Title"] = "SignUpUserPharmacy";
@@ -28,6 +28,8 @@
                                     <i class="fa fa-user"></i>
                                 </button>
                             </span>
+                            <input type="text" style="display:none;" id="" asp-for="idFarmacia" class="form-control" autocomplete="off" value="@Model.idFarmacia" />
+                            <input type="text" style="display:none;" id="" asp-for="id" class="form-control" autocomplete="off" value="@Model.id" />
                             <input type="text" id="alias" asp-for="alias" class="form-control" placeholder="Ingresar Usuario" autocomplete="off"/>
 
                             </div>

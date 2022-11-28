@@ -1,4 +1,6 @@
-﻿
+﻿@using LabPortugal_Intranet.Services;
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @{
     ViewData["Title"] = "Welcome";
     Layout = "~/Views/Shared/_Clean.cshtml";
@@ -8,7 +10,15 @@
 
 <div class="h-100 d-flex justify-content-center align-items-center">
     <div class="">
-        <h1>Bienvenido MIFARMA S.A.C.</h1>
+        @if (FarmaciaEnSesionService.getSessionFarmacia(HttpContextAccessor.HttpContext) != null)
+        {
+            <h1>Bienvenido @FarmaciaEnSesionService.getSessionFarmacia(HttpContextAccessor.HttpContext).razonSocial</h1>
+        }
+        else
+        {
+            <h1>Bienvenido Anónimo</h1>
+        }
+
     </div>
 
 </div>

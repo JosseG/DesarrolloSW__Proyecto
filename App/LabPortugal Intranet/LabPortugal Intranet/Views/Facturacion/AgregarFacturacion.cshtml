@@ -1,5 +1,63 @@
-﻿@{
+﻿@model IEnumerable<LabPortugal_Intranet.Models.FacturacionModel>
+
+@{
     ViewBag.Title = "FinalizarCompra";
 }
 
-<h2 class="text-center">Gracias Por su compra, Estimado cliente</h2>
+<h2 class="text-center pb-5">Gracias por su compra</h2>
+
+
+<div>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.item)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fechaEmision)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rucFarmacia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.razonSocial)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.subTotal)
+                </th>
+            </tr>
+        <thead>
+        <tbody>
+                    @foreach (var item in Model)
+                    {
+                <tr>
+                    <td>
+                                @Html.DisplayFor(modelItem => item.item)
+                    </td>
+                    <td>
+                                @Html.DisplayFor(modelItem => item.fechaEmision)
+                    </td>
+                    <td>
+                                @Html.DisplayFor(modelItem => item.rucFarmacia)
+                    </td>
+                    <td>
+                                @Html.DisplayFor(modelItem => item.razonSocial)
+                    </td>
+                    <td>
+                               @String.Format("{0:C}", (item.subTotal))
+                    </td>
+                </tr>
+                    }
+        <tbody>
+    </table>
+
+
+    <div  style="width:100%;text-align:center;">
+        @Html.ActionLink("Reporte", "FacturaReportInfo",new{},new { target = "_blank" ,@style="text-decoration:none;color:black;font-weight:bold;text-align:center;width:20%;",@class="btn btn-warning"})
+    </div>
+    
+</div>

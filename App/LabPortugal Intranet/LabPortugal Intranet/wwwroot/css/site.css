@@ -12,3 +12,100 @@ html {
   position: relative;
   min-height: 100%;
 }
+
+
+.lista_elementosfact {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+}
+
+.fact_item {
+    height: 400px;
+    position: relative;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgb(238, 238, 238);
+    position:relative;
+}
+
+.btn_eliminar > a {
+    text-decoration: none;
+}
+
+.btn_eliminar {
+    width: 150px;
+    position: absolute;
+    bottom: 5px;
+    margin: auto;
+    right: 0;
+    left: 0;
+}
+
+.fact-data {
+    padding: 5px 0;
+}
+
+    /*.cliente-data > span{
+    display:block;
+    text-align:end;
+}*/
+
+.fact-data-img{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    z-index:-20;
+    width:80%;
+    max-width:300px;
+    height:300px;
+}
+
+.fact-data-img > img {
+    width:100%;
+    filter: blur(4px);
+}
+
+.fact-data > span {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.total_item_count{
+    position:absolute;
+    font-weight:bold;
+    font-size:30px;
+    right:60px;
+    top:200px;
+    color:red;
+}
+
+.total_item_count::before {
+    padding-right:10px;
+    content:"Total : "
+    
+}
+
+.terminarcompra_item {
+    display: inline-block;
+    padding: 2px 8px;
+    position: absolute;
+    right: 350px;
+    top: 205px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+    .terminarcompra_item > a {
+        width: 100%;
+        text-decoration: none;
+        font-size:20px;
+        color:black;
+        font-weight:bold;
+    }

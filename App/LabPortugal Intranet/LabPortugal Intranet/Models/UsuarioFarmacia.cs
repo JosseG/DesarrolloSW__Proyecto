@@ -3,7 +3,7 @@
     public class UsuarioFarmacia
     {
 
-        public int id { get; set; }
+        public string id { get; set; }
         public string idFarmacia { get; set; }
         public string alias { get; set; }
         public string contrasena { get; set; }

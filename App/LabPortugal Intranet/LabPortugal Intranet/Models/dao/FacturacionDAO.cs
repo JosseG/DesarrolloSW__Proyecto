@@ -44,9 +44,8 @@ namespace LabPortugal_Intranet.Models.dao
                 try
                 {
 
-                    SqlCommand command = new SqlCommand("exec usp_facturacion_agregar @id,@idfarmacia,@fechaemision,@subtotal", connection);
+                    SqlCommand command = new SqlCommand("exec usp_facturacion_agregar @idfarmacia,@fechaemision,@subtotal", connection);
 
-                    command.Parameters.AddWithValue("@id", o.id);
                     command.Parameters.AddWithValue("@idfarmacia", o.idFarmacia);
                     command.Parameters.AddWithValue("@fechaemision", o.fechaEmision);
                     command.Parameters.AddWithValue("@subtotal", o.subTotal);
@@ -81,6 +80,70 @@ namespace LabPortugal_Intranet.Models.dao
                 {
                     Debug.WriteLine(e.ToString());
                 }
+            }
+        }
+
+        public IEnumerable<FacturacionModel> obtenerFacturacionModelUltimo()
+        {
+            var list = new List<FacturacionModel>();
+            SqlConnection connection = new Conexion().getConnection();
+            using (connection)
+            {
+                connection.Open();
+                try
+                {
+                    SqlCommand command = new SqlCommand("exec usp_facturacion_farmacia_producto_ultimo", connection);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Debug.WriteLine("Aqui si");
+                        list.Add(new FacturacionModel()
+                        {
+                            item = reader.GetString(0),
+                            fechaEmision = reader.GetDateTime(1).Date.ToString("dd/MM/yyyy"),
+                            rucFarmacia = reader.GetString(2),
+                            razonSocial = reader.GetString(3),
+                            subTotal = reader.GetDouble(4)
+                        });
+                        Debug.WriteLine("Elsoa");
+                    }
+                    reader.Close();
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.StackTrace);
+                }
+                return list;
+
+            }
+        }
+        public string ObtenerIdCorrelativo()
+        {
+            SqlConnection connection = new Conexion().getConnection();
+            String idCorrelativo = "";
+            using (connection)
+            {
+                connection.Open();
+
+                try
+                {
+
+                    SqlCommand command = new SqlCommand("select dbo.autogenerafacturacion()", connection);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        idCorrelativo = reader.GetString(0);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.ToString());
+                }
+                return idCorrelativo;
             }
         }
 

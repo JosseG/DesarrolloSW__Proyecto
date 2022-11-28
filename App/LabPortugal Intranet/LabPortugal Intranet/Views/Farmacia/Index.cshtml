@@ -1,38 +1,42 @@
-﻿@{
+﻿@using LabPortugal_Intranet.Services;
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
     ViewBag.Title = "Index";
 }
 
 
-<h2 class="text-center">::: MENU PRINCIPAL :::</h2>
-<br />
+<h2 class="text-center" style="padding:0 !important;"> Home </h2>
 
-<div>
+
+@*<div>
     @if (!Context.User.Identity.IsAuthenticated)
-    {
-     <div>
-        <p>
-            Hola <b>MIFARMA </b>
-        </p>
-        <div>
-            <a asp-area="" asp-controller="Auth" asp-action="LogOut">LogOut</a>
-        </div>
-    </div>
-    }
-    @if (Context.User.Identity.IsAuthenticated)
     {
         <div>
             <p>
-                Hola <b>@User.Identity.Name</b>
-                
+                Hola <b>MIFARMA </b>
             </p>
+            <div>
+                <a asp-area="" asp-controller="Auth" asp-action="LogOut">LogOut</a>
+            </div>
         </div>
+    }
+    @if (Context.User.Identity.IsAuthenticated || FarmaciaEnSesionService.getSessionFarmacia(HttpContextAccessor.HttpContext) != null)
+    {
+        
+            <p>
+                Hola <b>@FarmaciaEnSesionService.getSessionFarmacia(HttpContextAccessor.HttpContext).razonSocial</b>
+
+            </p>
+        
         <div>
             <a asp-area="" asp-controller="Auth" asp-action="LogOut">LogOut</a>
         </div>
     }
-</div>
+</div>*@
 
-<table style="font-size:large">
+@*<table style="font-size:large">
     <tr>
         <td>@Html.ActionLink("Mantenimiento Farmacia", "MantenimientoFarmacia")</td>
     </tr>
@@ -43,6 +47,17 @@
         <td>@Html.ActionLink("Mantenimiento Orden de Compra", "MantenimientoOrdenCompra")</td>
     </tr>
     <tr>
-        <td>@Html.ActionLink("Venta de Farmacos", "VentaProducto")</td> 
+        <td>@Html.ActionLink("Venta de Farmacos", "VentaProducto")</td>
     </tr>
-</table>
+</table>*@
+
+<div style="width:100%;padding:1em; display:flex; justify-content:center;">
+
+    <video autoplay muted>
+        <source src="/video/Laboratorio.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</div>
+
+

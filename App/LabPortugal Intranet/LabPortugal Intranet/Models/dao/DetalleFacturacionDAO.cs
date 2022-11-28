@@ -61,10 +61,6 @@ namespace LabPortugal_Intranet.Models.dao
             }
         }
 
-        public void Eliminar(object o)
-        {
-            throw new NotImplementedException();
-        }
 
         public void Eliminar(object[] a)
         {
@@ -90,6 +86,11 @@ namespace LabPortugal_Intranet.Models.dao
                 }
             }
             
+        }
+
+        public void Eliminar(object o)
+        {
+            throw new NotImplementedException();
         }
 
         public List<DetalleFacturacion> ObtenerTodos()

@@ -124,7 +124,7 @@ namespace LabPortugal_Intranet.Models.dao
 
         public OrdenCompra ObtenerXId(object o)
         {
-            Debug.WriteLine(o);
+            //Debug.WriteLine(o);
             if (o != null)
             {
                 return ObtenerTodos().FirstOrDefault(f => f.id.Equals(o));

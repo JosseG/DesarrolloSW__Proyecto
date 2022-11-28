@@ -54,7 +54,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
+        <tr style='@(item.stock>0?"":"background-color:#941028;color:white;")'>
            <td>
                     @Html.DisplayFor(modelItem => item.id)
             </td>
@@ -70,9 +70,22 @@
             <td>
                     @Html.DisplayFor(modelItem => item.precioUnidad)
             </td>
-                 <td>
-                    @Html.ActionLink("Detalle", "DetalleVentaProducto", new {  id=item.id  })
-                </td>
+                @if (item.stock > 0)
+                {
+                    <td>
+                    @Html.ActionLink("Detalle", "DetalleVentaProducto", new {  id=item.id  },new{@class="btn btn-warning"})
+                    </td>
+                }
+                else
+                {
+                    @*<td>
+                    @Html.ActionLink("Agregar Stock", "MantenimientoStockProducto","", new {  id=item.id  })
+                    </td>*@
+                    <td>
+                    <span class="btn btn-warning" style="cursor:not-allowed;">Detalle</span>
+                    </td>
+                }
+                
             </tr>
         }
     </tbody>

@@ -8,7 +8,7 @@
         public string idFarmacia { get; set; }
         public DateTime fechaEmision { get; set; }
 
-        public double subTotal { get; set; }
+        public float subTotal { get; set; }
         public bool estado { get; set; }
     }
 }

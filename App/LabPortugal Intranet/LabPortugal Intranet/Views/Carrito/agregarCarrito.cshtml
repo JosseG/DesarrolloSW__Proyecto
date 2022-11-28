@@ -5,7 +5,10 @@
 
 <h2 class="text-center">Agregar Productos al Carrito </h2>
 <br />
-<table class="table table-bordered table-striped">
+@{
+    double total = 0;
+}
+@*<table class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>ID</th>
@@ -19,11 +22,11 @@
             <th>Subtotal</th>
         </tr>
     </thead>
-
+    @{
+        double total = 0;
+    }
     <tbody>
-        @{
-            double total = 0;
-        }
+
         @if (HttpContextAccessor.HttpContext.Session.GetString("carrito") != null)
         {
             @foreach (var item in JsonSerializer.Deserialize<List<CarritoItem>>(HttpContextAccessor.HttpContext.Session.GetString("carrito")))
@@ -44,6 +47,7 @@
             }
         }
     </tbody>
+
     <tr></tr>
     <tfoot>
         <tr></tr>
@@ -52,12 +56,55 @@
             <th>@String.Format("{0:C}", total)</th>
         </tr>
     </tfoot>
-</table>
+</table>*@
 <br />
-@Html.ActionLink("Seguir Comprando", "VentaProducto", "Farmacia", null, null)
+
+    @Html.ActionLink("Seguir Comprando", "VentaProducto", "Farmacia", null, new {@class="btn btn-primary"})
+
+
 <br />
 <br />
-@Html.ActionLink("Terminar Compra", "AgregarFacturacion", "Facturacion", null, null)
+
+<div class="lista_elementosfact">
+    @if (HttpContextAccessor.HttpContext.Session.GetString("carrito") != null)
+    {
+        @foreach (var item in JsonSerializer.Deserialize<List<CarritoItem>>(HttpContextAccessor.HttpContext.Session.GetString("carrito")))
+        {
+            total += (double)(item.Cantidad * item.Producto.precioUnidad);
+            <div class="fact_item">
+                <div class="fact-data-img"><img src="@Url.Action("Imagen","Farmacia", new {id =  item.Producto.id})"/></div>
+                <div class="fact-data">Código : <span class="fw-bold">@Html.DisplayFor(modelItem => item.Producto.id)</span></div>
+
+                <div class="fact-data">Nombre : <span class="fw-bold">@Html.DisplayFor(modelItem => item.Producto.descripcion)</span></div>
+
+                <div class="fact-data">Precio Unitario : <span class="fw-bold">@String.Format("{0:C}",( item.Producto.precioUnidad))</span></div>
+
+                <div class="fact-data">Cantidad :  <span class="fw-bold">@Html.DisplayFor(modelItem => item.Cantidad)</span></div>
+
+                <div class="fact-data">Subtotal : <span class="fw-bold">@String.Format("{0:C}", (item.Cantidad * item.Producto.precioUnidad))</span></div>
+
+                <div class="btn btn-warning btn_eliminar w-75 fw-bold ">@Html.ActionLink("Eliminar", "Delete", new {  id=item.Producto.id  },new { @style="display:block;width:100%"})</div>
+            </div>
+        }
+    }
+</div>
+
+<div class="total_item_count">@String.Format("{0:C}", total)</div>
+
+@if (total > 0)
+{
+    <div class="terminarcompra_item btn btn-success">
+        @Html.ActionLink("Terminar Compra", "IndexarDataFacturacion", "Facturacion", null,null)
+    </div>
+}
+else
+{
+
+    <div class="terminarcompra_item btn btn-success">
+        <text style="width:100%; cursor:not-allowed;">Terminar Compra</text>
+    </div>
+}
+
 
 
 

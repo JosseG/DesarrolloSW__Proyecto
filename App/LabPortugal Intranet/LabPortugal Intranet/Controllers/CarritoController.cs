@@ -86,7 +86,7 @@ namespace LabPortugal_Intranet.Controllers
             var str = HttpContext.Session.GetString("carrito");
             List<CarritoItem> carritoItems = JsonSerializer.Deserialize<List<CarritoItem>>(str);
             carritoItems.RemoveAt(getIndice(id));
-            Debug.WriteLine(carritoItems.Count);
+            //Debug.WriteLine(carritoItems.Count);
             var content = JsonSerializer.Serialize(carritoItems);
             HttpContext.Session.SetString("carrito", content);
             return View("agregarCarrito");

@@ -35,6 +35,8 @@ namespace LabPortugal_Intranet.Models.dao
             }
         }
 
+
+
         public void Agregar(Farmacia o)
         {
             SqlConnection connection = new Conexion().getConnection();
@@ -45,14 +47,17 @@ namespace LabPortugal_Intranet.Models.dao
                 try
                 {
 
-                    SqlCommand command = new SqlCommand("exec usp_farmacia_agregar @ruc,@razonsocial,@telefono,@direccion", connection);
+                    SqlCommand command = new SqlCommand("exec usp_farmacia_agregar @id,@ruc,@razonsocial,@telefono,@direccion,@hasgoogleaccount", connection);
 
+                    command.Parameters.AddWithValue("@id", o.id);
                     command.Parameters.AddWithValue("@ruc", o.ruc);
                     command.Parameters.AddWithValue("@razonsocial", o.razonSocial);
                     command.Parameters.AddWithValue("@telefono", o.telefono);
                     command.Parameters.AddWithValue("@direccion", o.direccion);
+                    command.Parameters.AddWithValue("@hasgoogleaccount", o.hasGoogleAccount);
 
                     command.ExecuteNonQuery();
+                    Debug.WriteLine("LLego a agregar farmacia");
 
                 }
                 catch (Exception e)
@@ -131,7 +136,8 @@ namespace LabPortugal_Intranet.Models.dao
                             razonSocial = reader.GetString(2),
                             telefono = reader.GetString(3),
                             direccion = reader.GetString(4),
-                            estado = reader.GetBoolean(5)
+                            hasGoogleAccount = reader.GetBoolean(5),
+                            estado = reader.GetBoolean(6)
                         });
                     }
                     reader.Close();
@@ -152,13 +158,42 @@ namespace LabPortugal_Intranet.Models.dao
         
         public Farmacia ObtenerXId(object o)
         {
-            Debug.WriteLine(o);
+            Debug.WriteLine("Codigo enviado de farmacia " + o);
             if (o != null)
             {
                 return ObtenerTodos().FirstOrDefault(f => f.id.Equals(o));
             }
             return new Farmacia();
             
+        }
+
+
+        public string ObtenerIdCorrelativo()
+        {
+            SqlConnection connection = new Conexion().getConnection();
+            String idCorrelativo = "";
+            using (connection)
+            {
+                connection.Open();
+
+                try
+                {
+
+                    SqlCommand command = new SqlCommand("select dbo.autogenerafarmacia()", connection);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        idCorrelativo = reader.GetString(0);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.ToString());
+                }
+                return idCorrelativo;
+            }
         }
     }
 }

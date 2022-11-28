@@ -14,19 +14,43 @@ go
 if OBJECT_ID('tb_farmacia','U') is null create table tb_farmacia
 (
 	id_farmacia char(10) primary key,
-	ruc_farmacia char(14) not null unique,
+	ruc_farmacia char(11) not null unique,
 	razonsocial_farmacia varchar(90) not null,
 	telefono_farmacia varchar(15) not null,
     direccion_farmacia varchar(90) not null, /*tabla direccion pendiente*/
+	hasgoogleaccount bit null default(0),
 	estado bit not null
 )
 go
 
-insert into tb_farmacia values ('FR00000001','R1379477412133','Farmacias TuSalud','990230423','Las palmeras - Pachacamac',1)
+
+
+
+create or alter function dbo.autogenerafarmacia() returns varchar(10)
+As
+Begin
+	Declare @n int
+	Declare @cod varchar(10)=(Select top 1 id_farmacia from tb_farmacia order by 1 desc)
+
+	if(@cod is null)
+		Set @n=1
+	else
+		Set @n=CAST(subString(@cod,3,10) as int)+1
+
+	return CONCAT('FR',REPLICATE('0',8-LEN(@n)),@n)
+End
 go
-insert into tb_farmacia values ('FR00000002','R1379477412111','Farmacias NN','993330423','Los alamos - Lurin',0)
+
+select dbo.autogenerafarmacia()
 go
-insert into tb_farmacia values ('FR00000003','R1379477412000','Farmacias Rimac','991111423','Gardenias - Surco',1)
+
+/*--------------------------------------------------------------------------------*/
+
+insert into tb_farmacia values ('FR00000001','13794774121','Farmacias TuSalud','990230423','Las palmeras - Pachacamac',0,1)
+go
+insert into tb_farmacia values ('FR00000002','13794174121','Farmacias NN','993330423','Los alamos - Lurin',0,0)
+go
+insert into tb_farmacia values ('FR00000003','13794774120','Farmacias Rimac','991111423','Gardenias - Surco',0,1)
 go
 /*--------------------------------------------------------------------------------*/
 
@@ -43,10 +67,11 @@ create or alter procedure usp_farmacia_agregar
 @ruc char(14),
 @razonsocial varchar(90),
 @telefono varchar(15),
-@direccion varchar(90)
+@direccion varchar(90),
+@hasgoogleaccount bit
 as
 begin
-	insert into tb_farmacia values (@id,@ruc,@razonsocial,@telefono,@direccion,0)
+	insert into tb_farmacia values (@id,@ruc,@razonsocial,@telefono,@direccion,@hasgoogleaccount,0)
 end
 go
 /*--------------------------------------------------------------------------------*/
@@ -92,12 +117,11 @@ if OBJECT_ID('tb_usuario_farmacia','U') is null create table tb_usuario_farmacia
 )
 go
 
-insert into tb_usuario_farmacia values ('UF00000001','FR00000001','tusaludf','tusalud99',1)
+insert into tb_usuario_farmacia (id_usuario_farmacia,id_farmacia,alias_farmacia,contrasena_farmacia,estado) values ('UF00000001','FR00000001','tusaludf','tusalud99',1)
 go
-insert into tb_usuario_farmacia values ('UF00000002','FR00000002','nnf','nnf99',0)
+insert into tb_usuario_farmacia (id_usuario_farmacia,id_farmacia,alias_farmacia,contrasena_farmacia,estado) values ('UF00000002','FR00000002','nnf','nnf99',0)
 go
-insert into tb_usuario_farmacia values ('UF00000003','FR00000003','rimacf','rimac99',1)
-go
+
 /*--------------------------------------------------------------------------------*/
 
 
@@ -126,6 +150,7 @@ begin
 	select * from tb_usuario_farmacia
 end
 go
+
 /*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_usuario_farmacia_agregar
@@ -159,6 +184,75 @@ begin
 	update tb_usuario_farmacia set estado = 0 where id_usuario_farmacia = @id
 end
 go
+/*--------------------------------------------------------------------------------*/
+
+create or alter procedure usp_usuario_farmacia_validar_u
+@alias varchar(max),
+@contrasena varchar(max)
+as
+begin
+	select * from tb_usuario_farmacia where alias_farmacia = @alias and contrasena_farmacia = @contrasena
+end
+go
+
+
+
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+
+
+if OBJECT_ID('tb_google_farmacia','U') is null create table tb_google_farmacia
+(
+	id_google_auth varchar(255) primary key,
+	id_farmacia char(10) not null,
+	estado bit not null,
+	foreign key(id_farmacia) references tb_farmacia(id_farmacia)
+)
+go
+
+
+create or alter procedure usp_google_farmacias_listar
+as
+begin
+	select * from tb_google_farmacia
+end
+go
+
+/*--------------------------------------------------------------------------------*/
+
+create or alter procedure usp_google_farmacia_agregar
+@idGoogle varchar(255),
+@idfarmacia char(10)
+as
+begin
+	insert into tb_google_farmacia values (@idGoogle, @idfarmacia,1)
+end
+go
+/*--------------------------------------------------------------------------------*/
+
+/*create or alter procedure usp_google_farmacia_actualizar
+@id char(10),
+@alias varchar(90),
+@contrasena varchar(150)
+as
+begin
+	update tb_usuario_farmacia set alias_farmacia = @alias, contrasena_farmacia = @contrasena where id_usuario_farmacia = @id
+end
+go*/
+/*--------------------------------------------------------------------------------*/
+
+create or alter procedure usp_google_farmacia_eliminar
+@id char(10)
+as
+begin
+	update tb_google_farmacia set estado = 0 where id_google_auth = @id
+end
+go
+
 
 
 
@@ -601,7 +695,6 @@ if OBJECT_ID('tb_facturacion','U') is null create table tb_facturacion
 go
 
 
-
 /*--------------------------------------------------------------------------------*/
 
 
@@ -614,12 +707,29 @@ Begin
 	if(@cod is null)
 		Set @n=1
 	else
-		Set @n=CAST(subString(@cod,3,10) as int)+1
+		Set @n=CAST(subString(@cod,4,10) as int)+1
 
 	return CONCAT('FAC',REPLICATE('0',7-LEN(@n)),@n)
 End
 go
 
+create or alter function dbo.ultimocodigofacturacion() returns varchar(10)
+As
+Begin
+	Declare @n int
+	Declare @cod varchar(10)=(Select top 1 id_facturacion from tb_facturacion order by 1 desc)
+
+	if(@cod is null)
+		Set @n=1
+	else
+		Set @n=CAST(subString(@cod,4,10) as int)+1
+
+	return @cod
+End
+go
+
+select dbo.autogenerafacturacion()
+go
 
 /*--------------------------------------------------------------------------------*/
 
@@ -697,12 +807,28 @@ end
 go
 /*--------------------------------------------------------------------------------*/
 
-create or alter procedure usp_facturacion_farmacia_producto_listar
+
+create or alter procedure usp_facturacion_farmacia_producto_ultimo
 as
 begin
-	select p.descripcion_producto,f.fechaemision_facturacion,fr.ruc_farmacia,fr.razonsocial_farmacia,f.subtotal_facturacion from tb_detalle_facturacion df inner join tb_facturacion f on df.id_facturacion = f.id_facturacion join tb_producto p on df.id_producto = p.id_producto join tb_farmacia fr on f.id_farmacia = fr.id_farmacia
+	declare @n varchar(30)
+	set @n = dbo.ultimocodigofacturacion()
+	select p.descripcion_producto,f.fechaemision_facturacion,fr.ruc_farmacia,fr.razonsocial_farmacia,df.monto_detalle_facturacion from tb_detalle_facturacion df inner join tb_facturacion f on df.id_facturacion = f.id_facturacion join tb_producto p on df.id_producto = p.id_producto join tb_farmacia fr on f.id_farmacia = fr.id_farmacia where f.id_facturacion = @n
 end
 go
+
+/*--------------------------------------------------------------------------------*/
+
+create or alter procedure usp_facturacion_farmacia_producto_ultimo_report
+as
+begin
+	declare @n varchar(30)
+	set @n = dbo.ultimocodigofacturacion()
+	select p.descripcion_producto,f.fechaemision_facturacion,df.cantidadproducto_detalle_facturacion,p.preciounid_producto,df.monto_detalle_facturacion from tb_detalle_facturacion df inner join tb_facturacion f on df.id_facturacion = f.id_facturacion join tb_producto p on df.id_producto = p.id_producto join tb_farmacia fr on f.id_farmacia = fr.id_farmacia where f.id_facturacion = @n
+end
+go
+
+
 /*--------------------------------------------------------------------------------*/
 
 create or alter procedure usp_detalle_facturacion_agregar
@@ -824,3 +950,90 @@ begin
 end
 go
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+create table tb_cargo
+(
+	id_cargo int identity(1,1) primary key,
+	nombre_cargo varchar(60) not null,
+	estado bit not null
+);
+
+
+create table tb_cargo_usuario_farmacia (
+	id_cargo int not null,
+    id_usuario_farmacia char(10) not null,
+    primary key(id_cargo,id_usuario_farmacia),
+    foreign key(id_cargo) references tb_cargo(id_cargo),
+    foreign key(id_usuario_farmacia) references tb_usuario_farmacia(id_usuario_farmacia)
+);
+
+
+create table tb_cargo_usuario_google (
+	id_cargo int not null,
+    id_google_auth varchar(255) not null,
+    primary key(id_cargo,id_google_auth),
+    foreign key(id_cargo) references tb_cargo(id_cargo),
+    foreign key(id_google_auth) references tb_google_farmacia(id_google_auth)
+)
+go
+
+
+INSERT INTO tb_cargo (nombre_cargo,estado) VALUES ('ROLE_ADMINISTRADOR',1)
+INSERT INTO tb_cargo (nombre_cargo,estado) VALUES ('ROLE_CLIENTE',1)
+go
+
+
+INSERT INTO tb_cargo_usuario_farmacia values (1,'UF00000001');
+INSERT INTO tb_cargo_usuario_farmacia values (2,'UF00000001');
+INSERT INTO tb_cargo_usuario_farmacia values (2,'UF00000002');
+
+
+
+select * from tb_cargo_usuario_farmacia
+go
+
+
+select * from tb_cargo_usuario_google
+go
+
+
+
+
+
+
+select * from tb_google_farmacia
+go
+
+select * from tb_farmacia
+go
+
+select * from tb_usuario_farmacia
+go
+
+select * from tb_facturacion
+go
+
+select * from tb_detalle_facturacion
+go
+
+select * from tb_producto
+go
+
+select dbo.autogenerafacturacion()
+
+exec usp_facturacion_farmacia_producto_ultimo

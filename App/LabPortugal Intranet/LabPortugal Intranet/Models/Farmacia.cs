@@ -9,7 +9,11 @@ namespace LabPortugal_Intranet.Models
         [Display(Name = "Razón Social")] public string razonSocial { get; set; }
         [Display(Name = "Teléfono")] public string telefono { get; set; }
         [Display(Name = "Dirección")] public string direccion { get; set; }
+        public bool hasGoogleAccount { get; set; }
         [Display(Name = "Estado")] public bool estado { get; set; }
+
+
+
 
     }
 }

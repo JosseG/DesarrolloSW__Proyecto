@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Edith\\Documents\\CIBERTEC QUINTO CICLO\\DESARROLLO DE SERVICIOS WEB I - lunes\\proyecto\\intento5\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {}
+    "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Edith\\Documents\\CIBERTEC QUINTO CICLO\\DESARROLLO DE SERVICIOS WEB I - lunes\\proyecto\\intento5\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {
+    "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edith\\Documents\\CIBERTEC QUINTO CICLO\\DESARROLLO DE SERVICIOS WEB I - lunes\\proyecto\\intento5\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
+        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
         "projectName": "LabPortugal Intranet",
-        "projectPath": "C:\\Users\\Edith\\Documents\\CIBERTEC QUINTO CICLO\\DESARROLLO DE SERVICIOS WEB I - lunes\\proyecto\\intento5\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
-        "packagesPath": "C:\\Users\\Edith\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edith\\Documents\\CIBERTEC QUINTO CICLO\\DESARROLLO DE SERVICIOS WEB I - lunes\\proyecto\\intento5\\LabPortugal Intranet\\LabPortugal Intranet\\obj\\",
+        "projectPath": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
+        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Edith\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "App.Metrics.AspNetCore.Reporting": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "AspNetCore.Reporting": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
               "version": "[6.0.9, )"
@@ -52,6 +60,10 @@
               "target": "Package",
               "version": "[6.0.10, )"
             },
+            "System.CodeDom": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"
@@ -63,8 +75,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -76,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

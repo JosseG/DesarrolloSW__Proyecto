@@ -68,17 +68,13 @@
     </dl>
 </div>
 <div>
-    <input type="number" class="form-control numbers" min="0" />
-    <p>
-        @*@Html.ActionLink("Comprar (ActionLink)", "agregarCarrito", "Carrito", new {id = 2 }, new {cantidad = 2}, null)*@
-        @*@Html.ActionLink("Comprar (ActionLink)", "agregarCarrito", "Carrito", new {id = Model.id }, null)*@
-
-        <a href="#" class="agregar">Agregar Producto</a>
+    <input type="number" style ="width:30%;" class="form-control numbers" min="0" />
+    <p style="margin-top:10px;">
+        <a  href="#" class="agregar btn btn-warning">Agregar Producto</a>
     </p>
   
    
-    <a asp-action="VentaProducto">Ir a lista Farmaco</a>
-    <a asp-action="ListaOrdenCompra">Comprar</a>
+    <a class="btn btn-success" asp-action="VentaProducto">Ir a lista Farmaco</a>
 </div>
 
 @section Scripts

@@ -14,7 +14,25 @@ namespace LabPortugal_Intranet.Models.dao
 
         public void Agregar(UsuarioFarmacia o)
         {
-            throw new NotImplementedException();
+            SqlConnection connection = new Conexion().getConnection();
+            using (connection)
+            {
+                connection.Open();
+                try
+                {
+                    SqlCommand command = new SqlCommand("exec usp_usuario_farmacia_agregar @idfarmacia,@alias,@contrasena ", connection);
+                    command.Parameters.AddWithValue("@idfarmacia", o.idFarmacia);
+                    command.Parameters.AddWithValue("@alias", o.alias);
+                    command.Parameters.AddWithValue("@contrasena", o.contrasena);
+
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+
+                }
+            }
         }
 
         public void Eliminar(object o)
@@ -39,7 +57,7 @@ namespace LabPortugal_Intranet.Models.dao
                     {
                         list.Add(new UsuarioFarmacia()
                         {
-                            id  = reader.GetInt32(0),
+                            id  = reader.GetString(0),
                             idFarmacia = reader.GetString(1),
                             alias = reader.GetString(2),
                             contrasena = reader.GetString(3),
@@ -54,22 +72,52 @@ namespace LabPortugal_Intranet.Models.dao
                 }
                 return list;
 
-                /*using(SqlCommand command = new SqlCommand("exec usp_productos_listar", connection))
-                {
-
-                }*/
             }
         }
 
         public UsuarioFarmacia ObtenerXId(object o)
         {
-            throw new NotImplementedException();
+            Debug.WriteLine(o + " usuario farmacia");
+            if (o != null)
+            {
+                /*Debug.WriteLine(ObtenerTodos().FirstOrDefault(f => f.idGoogleAuth.Equals(o)).idGoogleAuth);*/
+                return ObtenerTodos().FirstOrDefault(f => f.id.Equals(o));
+            }
+            return new UsuarioFarmacia();
         }
 
-        public bool validarUsuario(string a, string b)
+        public string ObtenerIdCorrelativo()
         {
-            bool result = false;
-            //var usuarioFarmacia = new UsuarioFarmacia() ;
+            SqlConnection connection = new Conexion().getConnection();
+            String idCorrelativo = "";
+            using (connection)
+            {
+                connection.Open();
+
+                try
+                {
+
+                    SqlCommand command = new SqlCommand("select dbo.autogenerausuariofarmacia()", connection);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        idCorrelativo = reader.GetString(0);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.ToString());
+                }
+                return idCorrelativo;
+            }
+        }
+
+
+        public UsuarioFarmacia validarUsuario(string a, string b)
+        {
+            UsuarioFarmacia usuarioFarmacia = null;
             SqlConnection connection = new Conexion().getConnection();
             using (connection)
             {
@@ -85,12 +133,16 @@ namespace LabPortugal_Intranet.Models.dao
                     if (reader.Read())
                     {
                         Debug.WriteLine("Si llego");
-                        result = true;
-                        //usuarioFarmacia.id = reader.GetInt32(0);
-                        //usuarioFarmacia.idFarmacia = reader.GetString(1);
-                        //usuarioFarmacia.alias = reader.GetString(2);
-                        //usuarioFarmacia.contrasena = reader.GetString(3);
-                        //usuarioFarmacia.estado = reader.GetBoolean(4);
+                        usuarioFarmacia=new UsuarioFarmacia();
+                        usuarioFarmacia.id = reader.GetString(0);
+                        usuarioFarmacia.idFarmacia = reader.GetString(1);
+                        usuarioFarmacia.alias = reader.GetString(2);
+                        usuarioFarmacia.contrasena = reader.GetString(3);
+                        usuarioFarmacia.estado = reader.GetBoolean(4);
+
+                        Debug.WriteLine("En lectura f" + usuarioFarmacia.idFarmacia);
+                        Debug.WriteLine("En lectura a" + usuarioFarmacia.alias);
+                        Debug.WriteLine("En lectura c" + usuarioFarmacia.contrasena);
                     }
                     reader.Close();
                 }
@@ -98,7 +150,7 @@ namespace LabPortugal_Intranet.Models.dao
                 {
                     Console.WriteLine(e.Message);
                 }
-                return result;
+                return usuarioFarmacia;
             }
         }
 

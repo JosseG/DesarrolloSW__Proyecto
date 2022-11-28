@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
+
 var configuration = builder.Configuration;
 
 
@@ -49,7 +50,13 @@ services.AddAuthentication(o =>
         o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
         o.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
     })
-    .AddCookie()
+    .AddCookie(option =>
+    {
+        option.LoginPath = "/Auth/Index";
+        option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+        option.AccessDeniedPath = "";
+
+    })
     .AddGoogle(GoogleDefaults.AuthenticationScheme, go =>
     {
         go.ClientId = configuration["Authentication:Google:ClientId"];
