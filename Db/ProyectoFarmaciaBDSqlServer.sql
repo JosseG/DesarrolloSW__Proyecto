@@ -48,7 +48,7 @@ go
 
 insert into tb_farmacia values ('FR00000001','13794774121','Farmacias TuSalud','990230423','Las palmeras - Pachacamac',0,1)
 go
-insert into tb_farmacia values ('FR00000002','13794174121','Farmacias NN','993330423','Los alamos - Lurin',0,0)
+insert into tb_farmacia values ('FR00000002','13794174121','Farmacias NN','993330423','Los alamos - Lurin',0,1)
 go
 insert into tb_farmacia values ('FR00000003','13794774120','Farmacias Rimac','991111423','Gardenias - Surco',0,1)
 go
@@ -120,7 +120,7 @@ go
 
 insert into tb_usuario_farmacia (id_usuario_farmacia,id_farmacia,alias_farmacia,contrasena_farmacia,estado) values ('UF00000001','FR00000001','tusaludf','tusalud99',1)
 go
-insert into tb_usuario_farmacia (id_usuario_farmacia,id_farmacia,alias_farmacia,contrasena_farmacia,estado) values ('UF00000002','FR00000002','nnf','nnf99',0)
+insert into tb_usuario_farmacia (id_usuario_farmacia,id_farmacia,alias_farmacia,contrasena_farmacia,estado) values ('UF00000002','FR00000002','nnf','nnf99',1)
 go
 
 /*--------------------------------------------------------------------------------*/
