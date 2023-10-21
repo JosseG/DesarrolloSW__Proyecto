@@ -47,8 +47,75 @@ namespace LabPortugal_Intranet.Controllers
             {
               using (HttpClient client = new HttpClient())
                 {
-                  using (HttpResponseMessage res = await client.GetAsync(urlRequest))
+                    var key = _configuration.GetValue<string>("Sunat:key");
+                    /* var headerRequest = client.DefaultRequestHeaders;
+
+                    headerRequest.Add("Accept", "application/json");
+                    headerRequest.Add("Content-Type", "application/json");
+                    headerRequest.Add("Authorization", $"Bearer {key}");*/
+                    HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, urlRequest);
+                    request.Headers.Add("Accept", "application/json");
+                    request.Headers.Add("Authorization", $"Bearer {key}");
+                    using (HttpResponseMessage res = await client.SendAsync(request))
                     {
+                        Debug.WriteLine("Intenta validar");
+                        if (res.IsSuccessStatusCode)
+                        {
+                            Debug.WriteLine("Validó todo");
+                            Farmacia farmaciaSesion = FarmaciaRegistroEnSesionService.getSessionFarmaciaRegistro(HttpContext);
+                            farmaciaSesion.ruc = farmacia.ruc;
+                            Debug.WriteLine(farmacia.ruc);
+                            if (farmaciaSesion.hasGoogleAccount)
+                            {
+                                GoogleFarmacia googleFarmacia = GoogleFarmaciaRegistroEnSesionService.getSessionGoogleFarmaciaRegistro(HttpContext);
+
+                                Debug.WriteLine("Farmacia " + farmaciaSesion.id + " " + farmaciaSesion.direccion + " " + farmaciaSesion.ruc + " " + farmaciaSesion.razonSocial + " " + farmaciaSesion.hasGoogleAccount + " " + farmaciaSesion.estado);
+                                Debug.WriteLine("Google Farmacia " + googleFarmacia.idFarmacia + " " + googleFarmacia.idGoogleAuth + " " + googleFarmacia.estado);
+
+                                farmaciaDAO.Agregar(farmaciaSesion);
+                                googleFarmaciaDAO.Agregar(googleFarmacia);
+
+                                Debug.WriteLine("LLego a validar ruc");
+
+                                CargoUsuarioGoogle cargoUsuarioGoogle = new CargoUsuarioGoogle();
+
+                                cargoUsuarioGoogle.idCargo = 2;
+                                cargoUsuarioGoogle.idGoogle = googleFarmacia.idGoogleAuth;
+
+                                cargoUsuarioGoogleDAO.Agregar(cargoUsuarioGoogle);
+
+                                FarmaciaEnSesionService.setSessionFarmacia(HttpContext, farmaciaSesion);
+                                GoogleFarmaciaEnSesionService.setSessionGoogleFarmacia(HttpContext, googleFarmacia);
+                            }
+                            else
+                            {
+                                UsuarioFarmacia usuarioFarmacia = UsuarioEnSesionService.getSessionUser(HttpContext);
+
+
+                                farmaciaDAO.Agregar(farmaciaSesion);
+                                usuarioFarmaciaDAOimp.Agregar(usuarioFarmacia);
+
+
+                                CargoUsuarioFarmacia cargoUsuarioFarmacia = new CargoUsuarioFarmacia();
+
+                                cargoUsuarioFarmacia.idCargo = 2;
+                                cargoUsuarioFarmacia.idFarmacia = usuarioFarmacia.id;
+
+                                cargoUsuarioFarmaciaDAO.Agregar(cargoUsuarioFarmacia);
+
+
+                                FarmaciaEnSesionService.setSessionFarmacia(HttpContext, farmaciaSesion);
+                                UsuarioEnSesionService.setSessionUser(HttpContext, usuarioFarmacia);
+                            }
+
+
+                            return RedirectToAction("Index", "Auth");
+                        }
+                        else
+                        {
+                            ViewBag.mensaje = "RUC INVÁLIDO";
+                        }
+                        /*
                       using (HttpContent content = res.Content)
                         {
                            var data = await content.ReadAsStringAsync();
@@ -115,7 +182,8 @@ namespace LabPortugal_Intranet.Controllers
                             {
                                 ViewBag.mensaje = "Sin datos";
                             }
-                        }
+                        
+                        }*/
                     }
                 }
             }

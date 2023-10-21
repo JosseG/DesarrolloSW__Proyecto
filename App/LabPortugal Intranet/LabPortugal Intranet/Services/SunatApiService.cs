@@ -6,8 +6,8 @@
 
         public string getUrlValueSunatApi(IConfiguration configuration, string ruc)
         {
-            var key = configuration.GetValue<string>("Sunat:key");
-            var url = "https://dniruc.apisperu.com/api/v1/ruc/" + ruc + "?token=" + key;
+
+            var url = "https://api.apis.net.pe/v2/sunat/ruc?numero=" + ruc;
 
             return url;
         }

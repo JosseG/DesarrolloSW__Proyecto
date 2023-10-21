@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\LateralConGithub\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {}
+    "C:\\Users\\Jose\\Desktop\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\LateralConGithub\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {
+    "C:\\Users\\Jose\\Desktop\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\LateralConGithub\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
+        "projectUniqueName": "C:\\Users\\Jose\\Desktop\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
         "projectName": "LabPortugal Intranet",
-        "projectPath": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\LateralConGithub\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
+        "projectPath": "C:\\Users\\Jose\\Desktop\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\LabPortugal Intranet.csproj",
         "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jose\\Desktop\\CIBERTEC_5TO\\Desarrollo de Servicios WEB\\Proyecto\\LateralConGithub\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\obj\\",
+        "outputPath": "C:\\Users\\Jose\\Desktop\\DesarrolloSW__Proyecto\\App\\LabPortugal Intranet\\LabPortugal Intranet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "App.Metrics.AspNetCore.Reporting": {
               "target": "Package",
@@ -50,15 +50,19 @@
             },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[7.0.12, )"
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.1.39, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.12, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[7.0.10, )"
             },
             "System.CodeDom": {
               "target": "Package",
@@ -66,7 +70,7 @@
             },
             "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.8.3, )"
+              "version": "[4.8.5, )"
             }
           },
           "imports": [
@@ -75,7 +79,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -87,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
