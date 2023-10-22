@@ -22,6 +22,7 @@ namespace LabPortugal_Intranet.Controllers
 
         public IActionResult Index()
         {
+            // ReSharper disable once Mvc.ViewNotResolved
             return View();
         }
 
@@ -47,7 +48,8 @@ namespace LabPortugal_Intranet.Controllers
             {
               using (HttpClient client = new HttpClient())
                 {
-                    var key = _configuration.GetValue<string>("Sunat:key");
+                    //var key = _configuration.GetValue<string>("Sunat:key");
+                    var key2 = _configuration["Authorization:Sunat:Key"];
                     /* var headerRequest = client.DefaultRequestHeaders;
 
                     headerRequest.Add("Accept", "application/json");
@@ -55,7 +57,7 @@ namespace LabPortugal_Intranet.Controllers
                     headerRequest.Add("Authorization", $"Bearer {key}");*/
                     HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, urlRequest);
                     request.Headers.Add("Accept", "application/json");
-                    request.Headers.Add("Authorization", $"Bearer {key}");
+                    request.Headers.Add("Authorization", $"Bearer {key2}");
                     using (HttpResponseMessage res = await client.SendAsync(request))
                     {
                         Debug.WriteLine("Intenta validar");

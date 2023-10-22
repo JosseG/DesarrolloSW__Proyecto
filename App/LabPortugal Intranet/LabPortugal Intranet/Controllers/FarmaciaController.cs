@@ -121,6 +121,7 @@ namespace LabPortugal_Intranet.Controllers
         public ActionResult ActualizarStockProducto(string id)
         {
             if (id == null)
+                // ReSharper disable once Mvc.ActionNotResolved
                 return RedirectToAction("ObtenerTodos");
             Producto producto = productodao.ObtenerXId(id.ToString());
             ViewBag.TipoProducto = new SelectList(tipoproductodao.ObtenerTodos().ToList(), "id", "nombre", producto.idTipoProducto);
@@ -137,6 +138,7 @@ namespace LabPortugal_Intranet.Controllers
         public ActionResult DetalleStockProducto(string id)
         {
             if (id == null)
+                // ReSharper disable once Mvc.ActionNotResolved
                 return RedirectToAction("ObtenerTodos");
             Producto producto = productodao.ObtenerXId(id.ToString());
             return View(producto);
@@ -145,6 +147,7 @@ namespace LabPortugal_Intranet.Controllers
         public ActionResult EliminarStockProducto(string id)
         {
             if (id == null)
+                // ReSharper disable once Mvc.ActionNotResolved
                 return RedirectToAction("ObtenerTodos");
             Producto producto = productodao.ObtenerXId(id.ToString());
             productodao.Eliminar(id);
@@ -172,6 +175,7 @@ namespace LabPortugal_Intranet.Controllers
         public ActionResult DetalleVentaProducto(string id)
         {
             if (id == null)
+                // ReSharper disable once Mvc.ActionNotResolved
                 return RedirectToAction("ObtenerTodos");
             Producto producto = productodao.ObtenerXId(id.ToString());
             return View(producto);
@@ -179,8 +183,10 @@ namespace LabPortugal_Intranet.Controllers
         public ActionResult ListaOrdenCompra(string id)
         {
             if (id == null)
+                // ReSharper disable once Mvc.ActionNotResolved
                 return RedirectToAction("ObtenerTodos");
             Producto producto = productodao.ObtenerXId(id.ToString());
+            // ReSharper disable once Mvc.ViewNotResolved
             return View(producto);
             //return View(ordenCompraDAO.ObtenerTodos());
         }

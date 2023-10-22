@@ -24,6 +24,7 @@ namespace LabPortugal_Intranet.Controllers
         CarritoItem carritoItem = new CarritoItem();
         public IActionResult Index(String id)
         {
+            // ReSharper disable once Mvc.ViewNotResolved
             return View();
         }
 
